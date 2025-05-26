@@ -16,8 +16,8 @@ function Header({ data }: HeaderProp) {
   const [mobile_nav, setMobile_nav] = useState(false);
 
   return (
-    <header className=" py-[18px] fixed top-10px  left-0 z-30 w-full max-h-[60px] h-full bg-white">
-      <div className="px-6  container w-full z-10  mx-auto max-h-[60px] h-full  flex justify-between items-center">
+    <header className="px-6 py-[18px] fixed top-10px  left-0 z-30 w-full max-h-[60px] h-full bg-white">
+      <div className="container w-full z-10  mx-auto max-h-[60px] h-full  flex justify-between items-center">
         <div className="flex max-h-[24px] h-full justify-center items-center">
           <div
             className={`${

@@ -9,8 +9,8 @@ interface FooterProp {
 
 function Footer({ data }: FooterProp) {
   return (
-    <section className="bg-black ]">
-      <div className="container pt-[81px] pb-[32px] flex flex-col gap-[49px] px-8 mx-auto">
+    <section className="bg-black px-6">
+      <div className="container pt-[81px] pb-[32px] flex flex-col gap-[49px]  mx-auto">
         <div className="flex lg:flex-row gap-10 flex-col">
           <div className="flex py-1 lg:flex-row flex-col max-w-[554px] gap-y-4 items-center  lg:mx-0 mx-auto w-full">
             <Link

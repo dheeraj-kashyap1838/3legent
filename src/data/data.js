@@ -10,15 +10,15 @@ export const HeaderSection = {
     },
     {
       name: "Shop",
-      path: "/",
+      path: "/shop",
     },
     {
       name: "Product",
-      path: "/",
+      path: "/product",
     },
     {
       name: "Contact Us",
-      path: "/",
+      path: "/contact",
     },
   ],
   serch: {
@@ -273,5 +273,42 @@ export const HomeData = {
       type: "email",
     },
     buttonText: "Signup",
+  },
+};
+
+export const ContactData = {
+  BreadCrumb: [
+    {
+      label: "Home",
+      url: "/",
+    },
+    {
+      label: "Contact Us",
+      url: "/contact",
+      class: "active" ,
+    },
+  ],
+  ContactHeader: {
+    heading:
+      "We believe in sustainable decor. We’re passionate about life at home.",
+    description:
+      "Our features timeless furniture, with natural fabrics, curved lines, plenty of mirrors and classic design, which can be incorporated into any decor project. The pieces enchant for their sobriety, to last for generations, faithful to the shapes of each period, with a touch of the present.",
+  },
+  ContactAbout: {
+    containerSize: '',
+    image: {
+      path: "/images/sales.png",
+      alt: "sales",
+    },
+    content: {
+      sale: "",
+      heading: "About Us",
+      text: "3legant is a gift & decorations store based in HCMC, Vietnam. Est since 2019.Our customer service is always prepared to support you 24/7",
+      button: {
+        name: "Shop Now",
+        path: "/",
+        icon: "icon/arrow-right.svg",
+      },
+    },
   },
 };
