@@ -15,11 +15,9 @@ interface HeaderProp {
 function Header({ data }: HeaderProp) {
   const [mobile_nav, setMobile_nav] = useState(false);
 
-  console.log(mobile_nav);
-
   return (
-    <header className="px-6 py-[18px]">
-      <div className="container relative mx-auto max-h-[60px] h-full  flex justify-between items-center">
+    <header className=" py-[18px] fixed top-10px  left-0 z-30 w-full max-h-[60px] h-full bg-white">
+      <div className="px-6  container w-full z-10  mx-auto max-h-[60px] h-full  flex justify-between items-center">
         <div className="flex max-h-[24px] h-full justify-center items-center">
           <div
             className={`${
@@ -29,7 +27,9 @@ function Header({ data }: HeaderProp) {
           >
             <FiMenu />
           </div>
-          <Image width={105} height={24} src={data.logo.icon} alt="" />
+          <Link href="/">
+            <Image width={105} height={24} src={data.logo.icon} alt="" />
+          </Link>
         </div>
 
         {/* ========== Desktop Nav ======== */}
@@ -47,7 +47,7 @@ function Header({ data }: HeaderProp) {
         <nav
           className={`${
             mobile_nav ? "flex" : "hidden"
-          } md:hidden pb-6 w-full flex flex-col justify-between h-[89vh]  absolute top-[40px] left-0`}
+          } md:hidden pb-6 w-full px-6 z-10 bg-white flex flex-col justify-between h-[calc(100vh-60px)]  fixed top-[60px] left-0`}
         >
           {/*=========== mobile Top ============    */}
           <div className="flex flex-col">
@@ -115,27 +115,45 @@ function Header({ data }: HeaderProp) {
 
         <div className="max-w-[130px] max-h-[28px] h-full w-full flex items-center gap-4 md:justify-center justify-end ">
           <Image
-            className="md:block hidden"
+            className="md:block cursor-pointer hidden"
             width={24}
             height={24}
             src={data.serch.icon}
             alt=""
           />
-          <Image
-            className="md:block hidden"
-            width={24}
-            height={24}
-            src={data.user.icon}
-            alt=""
-          />
+          <Link href={data.user.path}>
+            <Image
+              className="md:block hidden"
+              width={24}
+              height={24}
+              src={data.user.icon}
+              alt={data.user.name}
+            />
+          </Link>
           {/* <div className=" flex items-center gap-1 "> */}
-          <div className={`${mobile_nav ? "hidden" : "block"} flex items-center gap-1`}>
-            <Image width={24} height={24} src={data.cart.icon} alt="" />
-            <div className="w-[20px] h-[20px] pb-0.5 bg-black text-white flex justify-center items-center rounded-full">
-              {data.cart.item}
-            </div>
+          <div
+            className={`${
+              mobile_nav ? "hidden" : "block"
+            } flex items-center gap-1`}
+          >
+            <Link href={data.cart.path}>
+              <Image
+                width={24}
+                height={24}
+                src={data.cart.icon}
+                alt={data.cart.name}
+              />
+            </Link>
+            <Link href={data.cart.path}>
+              <div className="w-[20px] h-[20px] pb-0.5 bg-black text-white flex justify-center items-center rounded-full">
+                {data.cart.item}
+              </div>
+            </Link>
           </div>
-          <div className={`w-[24px] h-[24px]  ${mobile_nav ? 'block': 'hidden' }`} onClick={()=>setMobile_nav(!mobile_nav)} >
+          <div
+            className={`w-[24px] h-[24px] md:hidden  ${mobile_nav ? "block" : "hidden"}`}
+            onClick={() => setMobile_nav(!mobile_nav)}
+          >
             <RxCross2 className="w-full h-full" />
           </div>
         </div>

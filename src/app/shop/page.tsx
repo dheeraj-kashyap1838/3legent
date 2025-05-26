@@ -1,4 +1,4 @@
-import ReAbout from 'react'
+
 
 function Shop() {
   return (
