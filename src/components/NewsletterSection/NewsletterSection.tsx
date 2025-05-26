@@ -1,8 +1,6 @@
 import React from "react";
 import type { NewsletterSection } from "@/type/type";
 import Image from "next/image";
-import Link from "next/link";
-Link;
 
 interface NewsProp {
   data: NewsletterSection;
