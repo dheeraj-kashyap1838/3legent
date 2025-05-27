@@ -2,7 +2,6 @@ import React from "react";
 import type { contactForm } from "@/type/type";
 import SmallCard from "../SmallCard/SmallCard";
 import Form from "next/form";
-import Button from "../Button/Button";
 
 interface FormProp {
   data: contactForm;
