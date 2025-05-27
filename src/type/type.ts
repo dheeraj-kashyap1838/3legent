@@ -118,7 +118,7 @@ export interface BreadCrumb {
 
 export interface contactForm {
   sectionTitle: string;
-  contactCard: SmallCard[];
+  formCard: SmallCard[];
   form: {
     name: formInput;
     email: formInput;

@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <HeroSlider data={HomeData.HeroSlider} />
       {/* <BannerGrid data={HomeData.BannerGrid} /> */}
-      <CardSection data={HomeData.CardSection} />
+      <CardSection data={HomeData.CardSection} variation="default" />
       <SalesSection data={HomeData.SalesSection} size="full"/>
       <ArticleSection data={HomeData.ArticleSection} />
       <NewsletterSection data={HomeData.NewsletterSection} />
