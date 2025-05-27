@@ -313,7 +313,7 @@ export const ContactData = {
   },
   contactForm: {
     sectionTitle: "Contact Us",
-    contactCard: [
+    formCard: [
       {
         icon: {
           path: "/icon/store.svg",
@@ -365,4 +365,30 @@ export const ContactData = {
       alt: "Map of Ho Chi Minh City",
     },
   },
+  ContactCards: [
+      {
+        icon: {
+          path: "/icon/store.svg",
+          alt: "store",
+        },
+        title: "ADDRESS",
+        description: "234 Hai Trieu, Ho Chi Minh City, Viet Nam",
+      },
+      {
+        icon: {
+          path: "/icon/call.svg",
+          alt: "call",
+        },
+        title: "CONTACT US",
+        description: "+84 234 567 890",
+      },
+      {
+        icon: {
+          path: "/icon/mail.svg",
+          alt: "mail",
+        },
+        title: "EMAIL",
+        description: "hello@3legant.com",
+      },
+    ],
 };

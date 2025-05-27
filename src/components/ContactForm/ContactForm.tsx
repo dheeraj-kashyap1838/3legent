@@ -9,23 +9,23 @@ interface FormProp {
 
 function ContactForm({ data }: FormProp) {
   return (
-    <section className="px-6 pt-12 pb-20">
+    <section className="px-6 md:pt-12 md:pb-20 py-10">
       <div className="container mx-auto flex flex-col gap-10">
         <h1 className="text-center heading">{data.sectionTitle}</h1>
         <div className="flex md:flex-row flex-col md:gap-6 gap-4">
-          {data.contactCard.map((card, id) => {
+          {data.formCard.map((card, id) => {
             return (
               <div
                 key={id}
-                className="md:max-w-[357px] max-w-[312px] mx-auto w-full"
+                className="max-w-[357px]  mx-auto w-full"
               >
                 <SmallCard data={card} variation="Align Center" />
               </div>
             );
           })}
         </div>
-        <div className="flex md:flex-row gap-7 flex-col">
-          <Form action="" className="max-w-[544px] flex flex-col gap-6 w-full">
+        <div className="flex lg:flex-row gap-7 flex-col-reverse">
+          <Form action="" className="max-w-[544px] flex flex-col gap-6 mx-auto w-full">
             <div className="flex flex-col gap-3">
               <label className="text_primary font_inter font-bold text-xs leading-3"  htmlFor={data.form.name.name}>
                 {data.form.name.label}
@@ -60,13 +60,13 @@ function ContactForm({ data }: FormProp) {
             </div>
             <button
               type="submit"
-              className="bg-black max-w-[189px] w-full rounded-lg text-white font_inter py-1.5 px-10 font-medium leading-7 tracking-[-0.4]"
+              className="bg-black max-w-[189px] lg:mx-0 mx-auto w-full rounded-lg text-white font_inter py-1.5 px-10 font-medium leading-7 tracking-[-0.4]"
             >
               {data.form.submitButton}
             </button>
           </Form>
-          <div className="max-w-[548px] w-full ">
-            <iframe src={data.map.src} className="w-full h-full" title="description"></iframe>
+          <div className="max-w-[548px] mx-auto w-full ">
+            <iframe src={data.map.src} className="w-full min-h-[311px] h-full" title="description"></iframe>
           </div>
         </div>
       </div>
