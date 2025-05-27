@@ -13,19 +13,16 @@ interface SalesProp {
 
 function SalesSection({ data, size }: SalesProp) {
 
-  
-
-
-
   return (
     <section>
-      <div className={`container flex lg:flex-row flex-col mx-auto  ${containerSize(size)}`}>
+      <div className={`flex lg:flex-row flex-col mx-auto  ${containerSize(size)}`}>
         <div className="max-w-[720px] mx-auto w-full">
           <Image
             width={720}
             height={532}
             src={data.image.path}
             alt={data.image.alt}
+            className="h-full"
           />
         </div>
         <div className="max-w-[720px] mx-auto bg_primary lg:px-[72px] py-[58px] px-8 gap-6 flex flex-col justify-center w-full">
@@ -35,7 +32,7 @@ function SalesSection({ data, size }: SalesProp) {
               {data.content.sale}
             </h2>
             : null}
-            <h2 className="  font-medium lg:text-[40px] text-[34px]">{data.content.heading}</h2>
+            <h2 className="  font-medium lg:text-[40px] leading-10 text-[34px]">{data.content.heading}</h2>
             <p className="font_inter font-normal text-xl leading-8">{data.content.text}</p>
           </div>
           <div className="max-w-[100px] w-full">

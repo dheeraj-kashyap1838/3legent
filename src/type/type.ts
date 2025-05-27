@@ -38,7 +38,6 @@ export interface ErrowButton {
 }
 
 export interface SalesSection {
-
   image: {
     path: string;
     alt: string;
@@ -115,4 +114,26 @@ export interface BreadCrumb {
   label: string;
   url: string;
   class?: string;
+}
+
+export interface contactForm {
+  sectionTitle: string;
+  contactCard: SmallCard[];
+  form: {
+    name: formInput;
+    email: formInput;
+    message: formInput;
+    submitButton: string;
+  };
+  map: {
+    src: string;
+    alt: string;
+  };
+}
+
+export interface formInput {
+  label: string;
+  placeholder: string;
+  type: string;
+  name: string;
 }

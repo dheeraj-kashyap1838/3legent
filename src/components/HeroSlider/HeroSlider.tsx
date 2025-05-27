@@ -27,7 +27,7 @@ export default function HeroSlider({ data }: SliderProp) {
           {data.slider.map((elem, id) => {
             return (
               <SwiperSlide key={id}>
-                <div className="max-h-[536px] flex justify-center items-end">
+                <div className="max-h-[536px] h-full flex justify-center items-end">
                   <Image
                     width={1120}
                     height={536}
