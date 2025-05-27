@@ -29,7 +29,7 @@ export interface BannerGrid {
     alt: string;
   };
   layout: string;
-};
+}
 
 export interface ErrowButton {
   name: string;
@@ -43,7 +43,7 @@ export interface SalesSection {
     alt: string;
   };
   content: {
-    sale: string;
+    sale?: string;
     heading: string;
     text: string;
     button: ErrowButton;
@@ -68,12 +68,11 @@ export interface CardSection {
 export interface ArticleSection {
   heading: string;
   headingButton: ErrowButton;
-  cards:{ image: Image; heading: string; button: ErrowButton }[];
+  cards: { image: Image; heading: string; button: ErrowButton }[];
 }
 
-
 export interface NewsletterSection {
-  bgImage:string;
+  bgImage: string;
   title: string;
   subtitle: string;
   icon: Image;
@@ -104,4 +103,37 @@ export interface FooterSection {
     icon: string;
     url: string;
   }[];
+}
+
+export interface ContactHeader {
+  heading: string;
+  description: string;
+}
+
+export interface BreadCrumb {
+  label: string;
+  url: string;
+  class?: string;
+}
+
+export interface contactForm {
+  sectionTitle: string;
+  contactCard: SmallCard[];
+  form: {
+    name: formInput;
+    email: formInput;
+    message: formInput;
+    submitButton: string;
+  };
+  map: {
+    src: string;
+    alt: string;
+  };
+}
+
+export interface formInput {
+  label: string;
+  placeholder: string;
+  type: string;
+  name: string;
 }

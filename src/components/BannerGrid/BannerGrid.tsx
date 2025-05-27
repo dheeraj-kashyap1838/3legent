@@ -13,7 +13,6 @@ function BannerGrid({ data }: BannerProp) {
   const large = data.find((elem) => elem.layout === "large");
   const small = data.filter((elem) => elem.layout === "small");
 
-  console.log(small)
 
   return (
     <section className="px-6">

@@ -10,15 +10,15 @@ export const HeaderSection = {
     },
     {
       name: "Shop",
-      path: "/",
+      path: "/shop",
     },
     {
       name: "Product",
-      path: "/",
+      path: "/product",
     },
     {
       name: "Contact Us",
-      path: "/",
+      path: "/contact",
     },
   ],
   serch: {
@@ -273,5 +273,96 @@ export const HomeData = {
       type: "email",
     },
     buttonText: "Signup",
+  },
+};
+
+export const ContactData = {
+  BreadCrumb: [
+    {
+      label: "Home",
+      url: "/",
+    },
+    {
+      label: "Contact Us",
+      url: "/contact",
+      class: "active",
+    },
+  ],
+  ContactHeader: {
+    heading:
+      "We believe in sustainable decor. We’re passionate about life at home.",
+    description:
+      "Our features timeless furniture, with natural fabrics, curved lines, plenty of mirrors and classic design, which can be incorporated into any decor project. The pieces enchant for their sobriety, to last for generations, faithful to the shapes of each period, with a touch of the present.",
+  },
+  ContactAbout: {
+    containerSize: "",
+    image: {
+      path: "/images/sales.png",
+      alt: "sales",
+    },
+    content: {
+      sale: "",
+      heading: "About Us",
+      text: "3legant is a gift & decorations store based in HCMC, Vietnam. Est since 2019.Our customer service is always prepared to support you 24/7",
+      button: {
+        name: "Shop Now",
+        path: "/",
+        icon: "icon/arrow-right.svg",
+      },
+    },
+  },
+  contactForm: {
+    sectionTitle: "Contact Us",
+    contactCard: [
+      {
+        icon: {
+          path: "/icon/store.svg",
+          alt: "store",
+        },
+        title: "ADDRESS",
+        description: "234 Hai Trieu, Ho Chi Minh City, Viet Nam",
+      },
+      {
+        icon: {
+          path: "/icon/call.svg",
+          alt: "call",
+        },
+        title: "CONTACT US",
+        description: "+84 234 567 890",
+      },
+      {
+        icon: {
+          path: "/icon/mail.svg",
+          alt: "mail",
+        },
+        title: "EMAIL",
+        description: "hello@3legant.com",
+      },
+    ],
+    form: {
+      name: {
+        label: "FULL NAME",
+        placeholder: "Your Name",
+        type: "text",
+        name: "name",
+      },
+      email: {
+        label: "EMAIL ADDRESS",
+        placeholder: "Your Email",
+        type: "email",
+        name: "email",
+      },
+      message: {
+        label: "MESSAGE",
+        placeholder: "Your message",
+        type: "textarea",
+        name: "message",
+      },
+      submitButton: "Send Message",
+    },
+    map: {
+      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.515951282227!2d106.70232187504185!3d10.771739089376767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f414519d1f9%3A0xc0bd40da46e38fe0!2zxJAuIEjhuqNpIFRyaeG7gXUsIELhur9uIE5naMOpLCBRdeG6rW4gMSwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2sin!4v1748327811976!5m2!1sen!2sin",
+      alt: "Map of Ho Chi Minh City",
+    },
   },
 };

@@ -132,3 +132,8 @@ label::before {
     letter-spacing: -0.6px;
   }
 }
+
+
+#breadCrumb .active{
+  color: black;
+}

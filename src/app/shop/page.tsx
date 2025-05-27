@@ -2,7 +2,7 @@
 
 function Shop() {
   return (
-    <div>page</div>
+    <div>lorem</div>
   )
 }
 export default Shop;

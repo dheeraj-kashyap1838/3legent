@@ -14,7 +14,7 @@ export default function Home() {
       <HeroSlider data={HomeData.HeroSlider} />
       {/* <BannerGrid data={HomeData.BannerGrid} /> */}
       <CardSection data={HomeData.CardSection} />
-      <SalesSection data={HomeData.SalesSection} />
+      <SalesSection data={HomeData.SalesSection} size="full"/>
       <ArticleSection data={HomeData.ArticleSection} />
       <NewsletterSection data={HomeData.NewsletterSection} />
     </>
