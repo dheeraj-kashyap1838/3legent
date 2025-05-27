@@ -137,3 +137,10 @@ export interface formInput {
   type: string;
   name: string;
 }
+
+export interface PageBanner {
+  breadCrumb: BreadCrumb[];
+  heading: string;
+  description: string;
+  backGround: string;
+}

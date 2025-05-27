@@ -74,8 +74,8 @@ export const FooterSection = {
     { name: "Home", path: "/" },
     { name: "Shop", path: "/" },
     { name: "Product", path: "/" },
-    { name: "Blog", path: "/" },
-    { name: "Contact Us", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact Us", path: "/contact" },
   ],
   legal: {
     copyright: "© 2023 3legant. All rights reserved",
@@ -366,29 +366,48 @@ export const ContactData = {
     },
   },
   ContactCards: [
+    {
+      icon: {
+        path: "/icon/store.svg",
+        alt: "store",
+      },
+      title: "ADDRESS",
+      description: "234 Hai Trieu, Ho Chi Minh City, Viet Nam",
+    },
+    {
+      icon: {
+        path: "/icon/call.svg",
+        alt: "call",
+      },
+      title: "CONTACT US",
+      description: "+84 234 567 890",
+    },
+    {
+      icon: {
+        path: "/icon/mail.svg",
+        alt: "mail",
+      },
+      title: "EMAIL",
+      description: "hello@3legant.com",
+    },
+  ],
+};
+
+export const BlogData = {
+  pageBanner: {
+    breadCrumb: [
       {
-        icon: {
-          path: "/icon/store.svg",
-          alt: "store",
-        },
-        title: "ADDRESS",
-        description: "234 Hai Trieu, Ho Chi Minh City, Viet Nam",
+        label: "Home",
+        url: "/",
       },
       {
-        icon: {
-          path: "/icon/call.svg",
-          alt: "call",
-        },
-        title: "CONTACT US",
-        description: "+84 234 567 890",
-      },
-      {
-        icon: {
-          path: "/icon/mail.svg",
-          alt: "mail",
-        },
-        title: "EMAIL",
-        description: "hello@3legant.com",
+        label: "Blog",
+        url: "/Blog",
+        class: "active",
       },
     ],
+    heading: "Our Blog",
+    description: "Home ideas and design inspiration",
+    backGround: "/images/blogBanner.png",
+  },
 };

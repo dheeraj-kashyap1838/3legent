@@ -9,7 +9,7 @@ interface BreadProp {
 
 function BreadCrumb({ data }: BreadProp) {
   return (
-    <section className="px-6 pt-[72px]" id="breadCrumb">
+    <section className="px-6 pt-4" id="breadCrumb">
       <div className="container mx-auto flex gap-4 font-medium text-sm">
         {data.map((elem, id) => {
           return (

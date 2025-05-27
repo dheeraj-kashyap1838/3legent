@@ -16,7 +16,7 @@ interface SliderProp {
 
 export default function HeroSlider({ data }: SliderProp) {
   return (
-    <section className="px-6 relative " id="hero_slider">
+    <section className="px-6" id="hero_slider">
       <div className="container mx-auto">
         <Swiper
           navigation={true}
