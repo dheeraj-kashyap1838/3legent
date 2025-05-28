@@ -24,10 +24,7 @@ export interface heroSlider {
 export interface BannerGrid {
   name: string;
   button: ErrowButton;
-  image: {
-    path: string;
-    alt: string;
-  };
+  image: Image;
   layout: string;
 }
 
@@ -38,21 +35,13 @@ export interface ErrowButton {
 }
 
 export interface SalesSection {
-  image: {
-    path: string;
-    alt: string;
-  };
+  image: Image;
   content: {
     sale?: string;
     heading: string;
     text: string;
     button: ErrowButton;
   };
-}
-
-export interface Image {
-  path: string;
-  alt: string;
 }
 
 export interface SmallCard {
@@ -136,4 +125,82 @@ export interface formInput {
   placeholder: string;
   type: string;
   name: string;
+}
+
+export interface PageBanner {
+  breadCrumb: BreadCrumb[];
+  heading: string;
+  description: string;
+  backGround: string;
+}
+
+export interface BlogCard {
+  image: Image;
+  title: { name: string; path: string };
+  date: string;
+}
+
+export interface FilterBlog {
+  tabs: { name: string; class?: string }[];
+  sortOption: string;
+  blogs: BlogCard[];
+  button: string;
+}
+
+// ========================
+
+export interface BreadcrumbItem {
+  label: string;
+  path: string;
+}
+
+export interface ArticleContent {
+  title: string;
+  text: string;
+}
+
+export interface Article {
+  breadCrumb: BreadCrumb[];
+  backBtn: {
+    path: string;
+    name: string;
+  };
+  type: string;
+  title: string;
+  author: string;
+  date: string;
+  coverImage: Image;
+  text: string;
+  content: ArticleContent;
+}
+
+export interface Image {
+  path: string;
+  alt: string;
+}
+
+export interface ImageGroupContent {
+  title: string;
+  text: string;
+}
+
+export interface ImageGroup {
+  images: Image[];
+  content: ImageGroupContent[];
+}
+
+export interface SplitContentItem {
+  title: string;
+  text: string;
+}
+
+export interface SplitContent {
+  image: Image;
+  content: SplitContentItem[];
+}
+
+export interface SingleBlog {
+  blogArticle: Article;
+  imageGroup: ImageGroup;
+  splitContent: SplitContent;
 }
