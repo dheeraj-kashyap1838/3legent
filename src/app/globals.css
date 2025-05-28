@@ -121,6 +121,23 @@ label::before {
   line-height: 44px;
   letter-spacing: -0.4px;
 }
+#breadCrumb .active {
+  color: black;
+}
+#breadCrumb .active #breadIcon{
+  display: none;
+}
+
+#tabs .active {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 8px;
+  padding: 16px 14px;
+  color: black;
+}
 @media (max-width: 767px) {
   #hero_slider .swiper-button-next,
   #hero_slider .swiper-button-prev {
@@ -131,9 +148,20 @@ label::before {
     line-height: 38px;
     letter-spacing: -0.6px;
   }
+  
 }
 
+@media (min-width: 767px){
+  #tabs .active {
+    border-bottom: 1px solid black;
+    color: black;
+    display: block;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: auto;
+  border-radius: 0px;
+  padding: 0px;
+  }
+} 
 
-#breadCrumb .active{
-  color: black;
-}

@@ -17,8 +17,6 @@ function Contact() {
       <ContactAbout data={ContactData.ContactAbout} size='' />
       <ContactForm data={ContactData.contactForm} />
       <ContactCards data={HomeData.CardSection} variation='primary' />
-      
-
     </>
   );
 }

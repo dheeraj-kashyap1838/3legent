@@ -9,13 +9,22 @@ interface BreadProp {
 
 function BreadCrumb({ data }: BreadProp) {
   return (
-    <section className="px-6 pt-4" id="breadCrumb">
-      <div className="container mx-auto flex gap-4 font-medium text-sm">
+    <section className="pt-4">
+      <div
+        className="container mx-auto flex flex-wrap gap-4 font-medium text-sm"
+        id="breadCrumb"
+      >
         {data.map((elem, id) => {
           return (
-            <Link key={id} href={elem?.url} className={`flex font_inter leading-6 text_primary items-center gap-2 ${elem?.class}`}>
+            <Link
+              key={id}
+              href={elem?.url}
+              className={`flex font_inter leading-6 text_primary items-center gap-2 ${elem?.class}`}
+            >
               {elem?.label}
-              <GoChevronRight />
+              <div id="breadIcon">
+                <GoChevronRight />
+              </div>
             </Link>
           );
         })}

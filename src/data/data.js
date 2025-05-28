@@ -394,7 +394,7 @@ export const ContactData = {
 };
 
 export const BlogData = {
-  pageBanner: {
+  PageBanner: {
     breadCrumb: [
       {
         label: "Home",
@@ -409,5 +409,179 @@ export const BlogData = {
     heading: "Our Blog",
     description: "Home ideas and design inspiration",
     backGround: "/images/blogBanner.png",
+  },
+  FilterBlog: {
+    tabs: [{ name: "All Blog", class: "active" }, { name: "Featured" }],
+    sortOption: "Sort by",
+    blogs: [
+      {
+        image: {
+          path: "/images/blog1.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "7 ways to decor your home like a professional",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog2.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Decor your bedroom for your children",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog3.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Modern texas home is beautiful and completely kid-friendly",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog4.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Modern texas home is beautiful and completely kid-friendly",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog5.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Modern texas home is beautiful and completely kid-friendly",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog6.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Modern texas home is beautiful and completely kid-friendly",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog7.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Modern texas home is beautiful and completely kid-friendly",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog8.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Modern texas home is beautiful and completely kid-friendly",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+      {
+        image: {
+          path: "/images/blog9.png",
+          alt: "blogImage",
+        },
+        title: {
+          name: "Inside a beautiful kitchen organization",
+          path: "/",
+        },
+        date: "October 16, 2023",
+      },
+    ],
+    button: "Show more",
+  },
+  SingleBlog: {
+    blogArticle: {
+      breadCrumb: [
+        { label: "Home", url: "/" },
+        { label: "Blog", url: "/blog" },
+        {
+          label: "How to make a busy bathroom a place to relax",
+          url: "/blog/how-to-make-a-busy-bathroom-a-place-to-relax",
+          class: "active",
+        },
+      ],
+      backBtn: {
+        path: "/blog",
+        name: "back",
+      },
+      type: "Article",
+      title: "How to make a busy bathroom a place to relax",
+      author: "Henrik Annemark",
+      date: "October 16, 2023",
+      coverImage: {
+        path: "/images/busy_bathroom.png",
+        alt: "Modern bathroom with bathtub and sink",
+      },
+      text: "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+      content: {
+        title: "A cleaning hub with built-in ventilation",
+        text: "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+      },
+    },
+    imageGroup: {
+      images: [
+        {
+          path: "/images/blog-bathroom-1.png",
+          alt: "Bathtub with shower and curtain",
+        },
+        {
+          path: "/images/blog-bathroom-2.png",
+          alt: "Modern bathroom sink with towel heater",
+        },
+      ],
+      content: [
+        {
+          title: "Storage with a calming effect",
+          text: "Having a lot to store doesn’t mean it all has to go in a cupboard. Many bathroom items are better kept out in the open – either to be close at hand or are nice to look at. Add a plant or two to set a calm mood for the entire room (and they’ll thrive in the humid air).",
+        },
+        {
+          title: "Kit your clutter for easy access",
+          text: "Even if you have a cabinet ready to swallow the clutter, it’s worth resisting a little. Let containers hold kits for different activities – home spa, make-up, personal hygiene – to bring out or put back at a moment’s notice.",
+        },
+      ],
+    },
+    splitContent: {
+      image: {
+        path: "/images/blog-bathroom-3.png",
+        alt: "Dark tile wall with hanging towel",
+      },
+      content: [
+        {
+          title: "An ecosystem of towels",
+          text: "Racks or hooks that allow air to circulate around each towel prolong their freshness. They dry quick and the need for frequent washing is minimized.",
+        },
+        {
+          title: "Make your mop disappear",
+          text: "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings.",
+        },
+      ],
+    },
   },
 };
