@@ -124,7 +124,7 @@ label::before {
 #breadCrumb .active {
   color: black;
 }
-#breadCrumb .active #breadIcon{
+#breadCrumb .active #breadIcon {
   display: none;
 }
 
@@ -138,6 +138,20 @@ label::before {
   padding: 16px 14px;
   color: black;
 }
+
+#imageGroup > div:nth-child(1) {
+  order: 0;
+}
+#imageGroup > div:nth-child(2) {
+  order: 2;
+}
+#imageGroup > div:nth-child(3) {
+  order: 1;
+}
+#imageGroup > div:nth-child(4) {
+  order: 3;
+}
+
 @media (max-width: 767px) {
   #hero_slider .swiper-button-next,
   #hero_slider .swiper-button-prev {
@@ -148,10 +162,9 @@ label::before {
     line-height: 38px;
     letter-spacing: -0.6px;
   }
-  
 }
 
-@media (min-width: 767px){
+@media (min-width: 767px) {
   #tabs .active {
     border-bottom: 1px solid black;
     color: black;
@@ -160,8 +173,20 @@ label::before {
     border-left: none;
     border-right: none;
     width: auto;
-  border-radius: 0px;
-  padding: 0px;
+    border-radius: 0px;
+    padding: 0px;
   }
-} 
+  
+}
 
+
+@media (min-width: 1024px) {
+  #imageGroup > div:nth-child(1),
+  #imageGroup > div:nth-child(2),
+  #imageGroup > div:nth-child(3),
+  #imageGroup > div:nth-child(4)
+  {
+     order: initial;
+    
+  }
+}

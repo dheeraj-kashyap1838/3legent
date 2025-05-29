@@ -539,20 +539,24 @@ export const BlogData = {
         path: "/images/busy_bathroom.png",
         alt: "Modern bathroom with bathtub and sink",
       },
-      text: "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
-      content: {
-        title: "A cleaning hub with built-in ventilation",
-        text: "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
-      },
+      content: [
+        {
+          text: "Your bathroom serves a string of busy functions on a daily basis. See how you can make all of them work, and still have room for comfort and relaxation.",
+        },
+        {
+          title: "A cleaning hub with built-in ventilation",
+          text: "Use a rod and a shower curtain to create a complement to your cleaning cupboard. Unsightly equipment is stored out of sight yet accessibly close – while the air flow helps dry any dampness.",
+        },
+      ],
     },
     imageGroup: {
       images: [
         {
-          path: "/images/blog-bathroom-1.png",
+          path: "/images/barthtub_with_shower.png",
           alt: "Bathtub with shower and curtain",
         },
         {
-          path: "/images/blog-bathroom-2.png",
+          path: "/images/barthroom_with_sink.png",
           alt: "Modern bathroom sink with towel heater",
         },
       ],
