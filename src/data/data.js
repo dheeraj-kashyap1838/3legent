@@ -127,7 +127,7 @@ export const HomeData = {
       button: {
         name: "Shop Now",
         path: "/",
-        icon: "icon/arrow-right.svg",
+        icon: "/icon/arrow-right.svg",
       },
       image: {
         path: "/images/living.png",
@@ -174,7 +174,7 @@ export const HomeData = {
       button: {
         name: "Shop Now",
         path: "/",
-        icon: "icon/arrow-right.svg",
+        icon: "/icon/arrow-right.svg",
       },
     },
   },
@@ -219,7 +219,7 @@ export const HomeData = {
     headingButton: {
       name: "More Articles",
       path: "/",
-      icon: "icon/arrow-right.svg",
+      icon: "/icon/arrow-right.svg",
     },
     cards: [
       {
@@ -231,7 +231,7 @@ export const HomeData = {
         button: {
           name: "Read More",
           path: "/",
-          icon: "icon/arrow-right.svg",
+          icon: "/icon/arrow-right.svg",
         },
       },
       {
@@ -243,7 +243,7 @@ export const HomeData = {
         button: {
           name: "Read More",
           path: "/",
-          icon: "icon/arrow-right.svg",
+          icon: "/icon/arrow-right.svg",
         },
       },
       {
@@ -255,7 +255,7 @@ export const HomeData = {
         button: {
           name: "Read More",
           path: "/",
-          icon: "icon/arrow-right.svg",
+          icon: "/icon/arrow-right.svg",
         },
       },
     ],
@@ -307,7 +307,7 @@ export const ContactData = {
       button: {
         name: "Shop Now",
         path: "/",
-        icon: "icon/arrow-right.svg",
+        icon: "/icon/arrow-right.svg",
       },
     },
   },
@@ -573,7 +573,7 @@ export const BlogData = {
     },
     splitContent: {
       image: {
-        path: "/images/blog-bathroom-3.png",
+        path: "/images/bathroom_towel.png",
         alt: "Dark tile wall with hanging towel",
       },
       content: [
@@ -584,6 +584,49 @@ export const BlogData = {
         {
           title: "Make your mop disappear",
           text: "Having your cleaning tools organized makes them easier to both use and return to. When they’re not needed, close the curtain and feel the peace of mind it brings.",
+        },
+      ],
+    },
+    moreArticle: {
+      heading: "You might also like",
+      button: {
+        name: "More Article",
+        path: "/blog",
+        icon: "/icon/arrow-right.svg",
+      },
+      blogs: [
+        {
+          image: {
+            path: "/images/blog1.png",
+            alt: "blogImage",
+          },
+          title: {
+            name: "7 ways to decor your home like a professional",
+            path: "/",
+          },
+          date: "October 16, 2023",
+        },
+        {
+          image: {
+            path: "/images/blog2.png",
+            alt: "blogImage",
+          },
+          title: {
+            name: "Decor your bedroom for your children",
+            path: "/",
+          },
+          date: "October 16, 2023",
+        },
+        {
+          image: {
+            path: "/images/blog3.png",
+            alt: "blogImage",
+          },
+          title: {
+            name: "Modern texas home is beautiful and completely kid-friendly",
+            path: "/",
+          },
+          date: "October 16, 2023",
         },
       ],
     },
