@@ -154,9 +154,9 @@ export interface BreadcrumbItem {
   path: string;
 }
 
-export interface ArticleContent {
-  title: string;
-  text: string;
+export interface Content {
+  title?: string;
+  text?: string;
 }
 
 export interface Article {
@@ -170,8 +170,8 @@ export interface Article {
   author: string;
   date: string;
   coverImage: Image;
-  text: string;
-  content: ArticleContent;
+  // text: string;
+  content: Content[];
 }
 
 export interface Image {

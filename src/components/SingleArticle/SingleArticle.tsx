@@ -6,6 +6,7 @@ import { GoChevronLeft } from "react-icons/go";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { LuCalendar } from "react-icons/lu";
 import Image from "next/image";
+import BlogContent from "../BlogContent/BlogContent";
 
 interface ArticleProp {
   data: Article;
@@ -32,11 +33,11 @@ function SingleArticle({ data }: ArticleProp) {
           <h2 className="font_inter font-bold text-xs leading-3">
             {data.type}
           </h2>
-          <h3 className="max-w-[834px] w-full font-medium text-[54px] leading-[58px] tracking-[-1px]">
+          <h2 className="max-w-[834px] w-full font-medium md:text-[54px] text-[28px] md:leading-[58px] leading-[34px] md:tracking-[-1px] tracking-[-0.6px]">
             {data.title}
-          </h3>
-          <div className="flex gap-12">
-            <h4 className="flex items-center text_primary font-normal leading-[26px] gap-1">
+          </h2>
+          <div className="max-w-[366px] w-full flex justify-between">
+            <h4 className="flex items-center text_primary font-normal md:text-[16px] text-[14px] md:leading-[26px] leading-[22px ] gap-1">
               <FaRegCircleUser />
               {data.author}
             </h4>
@@ -46,8 +47,19 @@ function SingleArticle({ data }: ArticleProp) {
             </h4>
           </div>
         </div>
-        <Image width={1120} height={646} src={data.coverImage.path} alt={data.coverImage.alt} className="py-10"/>
-        <p className="font_inter leading-6">{data.text}</p>
+        <Image
+          width={1120}
+          height={646}
+          src={data.coverImage.path}
+          alt={data.coverImage.alt}
+          className="py-10"
+        />
+        {/* <p className="font_inter leading-6">{data.text}</p> */}
+        {data.content.map((elem, id )=>{
+          return(
+            <BlogContent key={id} data={elem}/>
+          )
+        })}
       </div>
     </section>
   );
