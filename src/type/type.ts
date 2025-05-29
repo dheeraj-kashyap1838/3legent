@@ -203,4 +203,11 @@ export interface SingleBlog {
   blogArticle: Article;
   imageGroup: ImageGroup;
   splitContent: SplitContent;
+  moreArticle: MoreArticle;
+}
+
+export interface MoreArticle {
+  heading: string;
+  button: ErrowButton;
+  blogs: BlogCard[];
 }

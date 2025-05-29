@@ -14,7 +14,7 @@ interface ArticleProp {
 
 function SingleArticle({ data }: ArticleProp) {
   return (
-    <section className="px-6 pt">
+    <section className="px-6 pb-5">
       <div className="container mx-auto">
         <div className="flex items-center ">
           <div className="md:block hidden">
