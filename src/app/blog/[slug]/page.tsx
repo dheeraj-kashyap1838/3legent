@@ -1,8 +1,9 @@
 import SingleArticle from "@/components/SingleArticle/SingleArticle";
 import ImageGroup from "@/components/ImageGroup/ImageGroup";
-import { BlogData } from "@/data/data";
+import { BlogData,HomeData } from "@/data/data";
 import SplitContent from "@/components/SplitContent/SplitContent";
 import MoreArticle from "@/components/MoreArticle/MoreArticle";
+import NewsletterSection from "@/components/NewsletterSection/NewsletterSection";
 
 
 function SingleBlog() {
@@ -13,6 +14,7 @@ function SingleBlog() {
       <ImageGroup data={SingleBlog.imageGroup} />
       <SplitContent data={SingleBlog.splitContent} />
       <MoreArticle data={SingleBlog.moreArticle} />
+      <NewsletterSection data={HomeData.NewsletterSection} />
       
 
     </>

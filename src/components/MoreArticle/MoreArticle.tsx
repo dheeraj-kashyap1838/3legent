@@ -22,7 +22,7 @@ function MoreArticle({ data }: MoreProp) {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center mx-auto gap-[25px] ">
           {data.blogs.map((card, id) => {
             return (
-              <div key={id} className="max-w-[357px] w-full">
+              <div key={id} className="max-w-[357px]  w-full">
                 <BlogCard data={card} />
               </div>
             );

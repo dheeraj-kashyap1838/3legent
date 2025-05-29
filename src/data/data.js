@@ -421,7 +421,7 @@ export const BlogData = {
         },
         title: {
           name: "7 ways to decor your home like a professional",
-          path: "/",
+          path: "/blog/dheeraj",
         },
         date: "October 16, 2023",
       },
