@@ -10,11 +10,11 @@ export const HeaderSection = {
     },
     {
       name: "Shop",
-      path: "/shop",
+      path: "/",
     },
     {
       name: "Product",
-      path: "/product",
+      path: "/",
     },
     {
       name: "Contact Us",
