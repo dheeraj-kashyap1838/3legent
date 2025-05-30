@@ -100,6 +100,15 @@ label::before {
   background-color: white !important;
   opacity: 1;
 }
+#hero_slider p strong {
+color: black;
+}
+#hero_slider h1 strong {
+  color: var(--text_primary);
+}
+#hero_slider .swiper-pagination-horizontal {
+  bottom: 32px;
+}
 #hero_slider .swiper-pagination-bullet-active {
   width: 30px;
   height: 8px;
