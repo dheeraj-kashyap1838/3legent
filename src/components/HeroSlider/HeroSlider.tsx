@@ -16,8 +16,8 @@ interface SliderProp {
 
 export default function HeroSlider({ data }: SliderProp) {
   return (
-    <section className="px-6" id="hero_slider">
-      <div className="container mx-auto">
+    <section className="md:px-0 px-6" id="hero_slider">
+      <div className=" mx-auto">
         <Swiper
           navigation={true}
           pagination={true}
@@ -27,12 +27,14 @@ export default function HeroSlider({ data }: SliderProp) {
           {data.slider.map((elem, id) => {
             return (
               <SwiperSlide key={id}>
-                <div className="max-h-[536px] h-full flex justify-center items-end">
+                <div className="max-h-[536px] h-full flex justify-center xl:items-end items-center">
                   <Image
-                    width={1120}
-                    height={536}
+                    width={0}
+                    height={0}
                     src={elem.path}
                     alt={elem.alt}
+                    sizes="100vw"
+                    className="w-full h-auto"
                   />
                 </div>
               </SwiperSlide>
