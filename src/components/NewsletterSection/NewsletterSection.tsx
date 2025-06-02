@@ -9,7 +9,7 @@ interface NewsProp {
 function NewsletterSection({ data }: NewsProp) {
   return (
     <section
-      className="container mx-auto bg-cover bg-center max-w-[1440px] w-full"
+      className="mx-auto bg-cover bg-center w-full md:px-0"
       style={{ backgroundImage: `url(${data.bgImage})` }}
     >
       <div className="max-w-[540px] px-8 text-center w-full pt-[101px] pb-[93px] mx-auto ">
