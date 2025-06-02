@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomepageDocumentDataSlicesSlice =
+  | NewsLetterSlice
   | ArticleSectionSlice
   | SalesSectionSlice
   | CardSectionSlice
@@ -340,6 +341,91 @@ export type HeroSliderSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *NewsLetter → Default → Primary*
+ */
+export interface NewsLetterSliceDefaultPrimary {
+  /**
+   * Background image field in *NewsLetter → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_letter.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *NewsLetter → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading here...
+   * - **API ID Path**: news_letter.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *NewsLetter → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter description here...
+   * - **API ID Path**: news_letter.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Placeholder field in *NewsLetter → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter placeholder here....
+   * - **API ID Path**: news_letter.default.primary.place_holder
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  place_holder: prismic.KeyTextField;
+
+  /**
+   * Button field in *NewsLetter → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter button name...
+   * - **API ID Path**: news_letter.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for NewsLetter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsLetterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NewsLetterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NewsLetter*
+ */
+type NewsLetterSliceVariation = NewsLetterSliceDefault;
+
+/**
+ * NewsLetter Shared Slice
+ *
+ * - **API ID**: `news_letter`
+ * - **Description**: NewsLetter
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsLetterSlice = prismic.SharedSlice<
+  "news_letter",
+  NewsLetterSliceVariation
+>;
+
+/**
  * Primary content in *SalesSection → Default → Primary*
  */
 export interface SalesSectionSliceDefaultPrimary {
@@ -464,6 +550,10 @@ declare module "@prismicio/client" {
       HeroSliderSliceDefaultPrimary,
       HeroSliderSliceVariation,
       HeroSliderSliceDefault,
+      NewsLetterSlice,
+      NewsLetterSliceDefaultPrimary,
+      NewsLetterSliceVariation,
+      NewsLetterSliceDefault,
       SalesSectionSlice,
       SalesSectionSliceDefaultPrimary,
       SalesSectionSliceVariation,

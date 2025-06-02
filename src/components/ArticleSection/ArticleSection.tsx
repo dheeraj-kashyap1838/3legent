@@ -28,7 +28,7 @@ function ArticleSection({ data }: ArticleProp) {
         <div className="flex md:flex-row gap-[25] mx-auto flex-col">
           {blog_card.map((card, id) => {
             return (
-              <BlogCard data={card}/>
+              <BlogCard key={id} data={card} variation='with_button'/>
               // <div key={id} className="max-w-[357px] flex flex-col gap-6 w-full">
               //   <Image
               //     width={357}

@@ -1,0 +1,66 @@
+{
+  "id": "sales_section",
+  "type": "SharedSlice",
+  "name": "SalesSection",
+  "description": "SalesSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "content_with_image": {
+          "type": "Image",
+          "config": {
+            "label": "Content with image",
+            "constraint": {
+              "width": null,
+              "height": null
+            },
+            "thumbnails": []
+          }
+        },
+        "sale_offer": {
+          "type": "StructuredText",
+          "config": {
+            "label": "sale offer",
+            "placeholder": "Enter offer detail.....",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3"
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Enter heading here...",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": "Enter sub description here..."
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "Enter your button name...",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

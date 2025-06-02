@@ -1,6 +1,6 @@
 import React from "react";
 import type { contactForm } from "@/type/type";
-import SmallCard from "../SmallCard/SmallCard";
+// import SmallCard from "../SmallCard/SmallCard";
 import Form from "next/form";
 
 interface FormProp {
@@ -19,7 +19,7 @@ function ContactForm({ data }: FormProp) {
                 key={id}
                 className="max-w-[357px]  mx-auto w-full"
               >
-                <SmallCard data={card} variation="Align Center" />
+                {/* <SmallCard data={card} variation="Align Center" /> */}
               </div>
             );
           })}

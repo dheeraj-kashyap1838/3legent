@@ -3,7 +3,7 @@ import type { CardSection } from "@/type/type";
 import SmallCard from "../SmallCard/SmallCard";
 import { Content } from "@prismicio/client";
 
-import * as prismic from "@prismicio/client";
+// import * as prismic from "@prismicio/client";
 
 interface CardSectionProps {
   data: Content.CardSectionSlice;

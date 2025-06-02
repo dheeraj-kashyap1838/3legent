@@ -1,7 +1,7 @@
 import React from "react";
 import type { MoreArticle } from "@/type/type";
-import ErrowButton from "../ErrowButton/ErrowButton";
-import BlogCard from "../BlogCard/BlogCard";
+// import ErrowButton from "../ErrowButton/ErrowButton";
+// import BlogCard from "../BlogCard/BlogCard";
 
 interface MoreProp {
   data: MoreArticle;
@@ -16,14 +16,14 @@ function MoreArticle({ data }: MoreProp) {
             {data?.heading}
           </h2>
           <div className="max-w-[121px] w-full">
-            <ErrowButton data={data?.button} />
+            {/* <ErrowButton data={data?.button} /> */}
           </div>
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center mx-auto gap-[25px] ">
           {data.blogs.map((card, id) => {
             return (
               <div key={id} className="max-w-[357px]  w-full">
-                <BlogCard data={card} />
+                {/* <BlogCard data={card} /> */}
               </div>
             );
           })}

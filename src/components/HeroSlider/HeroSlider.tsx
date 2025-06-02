@@ -18,8 +18,8 @@ interface HeroSlidesProps {
 export default function HeroSlider({ slice }: HeroSlidesProps) {
   const { description, heading, sliderImage } = slice?.primary;
   return (
-    <section className="px-6" id="hero_slider">
-      <div className="container mx-auto">
+    <section className="md:px-0 px-6" id="hero_slider">
+      <div className=" w-full mx-auto">
         {prismic.isFilled.group(sliderImage) && (
           <Swiper
             navigation={true}
@@ -43,7 +43,7 @@ export default function HeroSlider({ slice }: HeroSlidesProps) {
             {prismic.isFilled.richText(heading) && (
               <PrismicRichText field={heading} />
             )}
-          </div>
+          </div>  
           <div className="flex font_inter font-semibold text_primary  max-w-[477px] w-full">
             {prismic.isFilled.richText(heading) && (
               <PrismicRichText field={description} />

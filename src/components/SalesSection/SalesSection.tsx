@@ -13,20 +13,19 @@ interface SalesSectionProps {
 }
 
 function SalesSection({ data, size }: SalesSectionProps) {
-  // console.log(data.primary)
   const { button, content_with_image, description, heading, sale_offer } =
     data?.primary;
   return (
     <section>
       <div
-        className={`flex lg:flex-row flex-col mx-auto  ${containerSize(size)}`}
+        className={`flex lg:flex-row max-h-[532px] h-full flex-col mx-auto  ${containerSize(size)}`}
       >
-        <div className="max-w-[720px] mx-auto w-full">
+        <div className=" mx-auto max-h-[532px] h-full overflow-hidden w-full flex items-center">
           {Prismic.isFilled.image(content_with_image) && (
             <PrismicImage field={content_with_image} />
           )}
         </div>
-        <div className="max-w-[720px] mx-auto bg_primary lg:px-[72px] py-[58px] px-8 gap-6 flex flex-col justify-center w-full">
+        <div className=" mx-auto bg_primary lg:px-[72px] py-[58px] px-8 gap-6 flex flex-col justify-center w-full">
           <div className=" flex flex-col gap-4">
             <div className="font_inter text-[#377DFF] font-bold leading-4">
               {Prismic.isFilled.richText(sale_offer) && (

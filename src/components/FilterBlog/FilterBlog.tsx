@@ -5,7 +5,7 @@ import Grid6 from "@/components/SVG_Icons/Grid6";
 import Grid4 from "@/components/SVG_Icons/Grid4";
 import Grid2_horizontal from "@/components/SVG_Icons/Grid2_horizontal";
 import Grid2_vertical from "@/components/SVG_Icons/Grid2_vertical";
-import BlogCard from "../BlogCard/BlogCard";
+// import BlogCard from "../BlogCard/BlogCard";
 
 interface BlogProp {
   data: FilterBlog;
@@ -61,7 +61,7 @@ function FilterBlog({ data }: BlogProp) {
               
                 className=" max-w-[357px] w-full"
                 >
-                <BlogCard data={card} />
+                {/* <BlogCard data={card} /> */}
               </div>
             </div>
             );
