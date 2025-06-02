@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSliderSlice;
+type HomepageDocumentDataSlicesSlice =
+  | ArticleSectionSlice
+  | SalesSectionSlice
+  | CardSectionSlice
+  | HeroSliderSlice;
 
 /**
  * Content for Homepage documents
@@ -70,6 +74,188 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = HomepageDocument;
+
+/**
+ * Item in *ArticleSection → Default → Primary → Blog Card*
+ */
+export interface ArticleSectionSliceDefaultPrimaryBlogCardItem {
+  /**
+   *  Card Image field in *ArticleSection → Default → Primary → Blog Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_section.default.primary.blog_card[].card_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  card_image: prismic.ImageField<never>;
+
+  /**
+   * Card Heading field in *ArticleSection → Default → Primary → Blog Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter card heading...
+   * - **API ID Path**: article_section.default.primary.blog_card[].card_heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  card_heading: prismic.RichTextField;
+
+  /**
+   * Button field in *ArticleSection → Default → Primary → Blog Card*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your button name...
+   * - **API ID Path**: article_section.default.primary.blog_card[].button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *ArticleSection → Default → Primary*
+ */
+export interface ArticleSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *ArticleSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading here...
+   * - **API ID Path**: article_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Button field in *ArticleSection → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter button name...
+   * - **API ID Path**: article_section.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Blog Card field in *ArticleSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_section.default.primary.blog_card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  blog_card: prismic.GroupField<
+    Simplify<ArticleSectionSliceDefaultPrimaryBlogCardItem>
+  >;
+}
+
+/**
+ * Default variation for ArticleSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArticleSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ArticleSection*
+ */
+type ArticleSectionSliceVariation = ArticleSectionSliceDefault;
+
+/**
+ * ArticleSection Shared Slice
+ *
+ * - **API ID**: `article_section`
+ * - **Description**: ArticleSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ArticleSectionSlice = prismic.SharedSlice<
+  "article_section",
+  ArticleSectionSliceVariation
+>;
+
+/**
+ * Item in *CardSection → Default → Primary → Cards*
+ */
+export interface CardSectionSliceDefaultPrimaryCardsItem {
+  /**
+   * Card icon field in *CardSection → Default → Primary → Cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_section.default.primary.cards[].card_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  card_icon: prismic.ImageField<never>;
+
+  /**
+   * Heading field in *CardSection → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter card heading...
+   * - **API ID Path**: card_section.default.primary.cards[].heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *CardSection → Default → Primary → Cards*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter sub description here...
+   * - **API ID Path**: card_section.default.primary.cards[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *CardSection → Default → Primary*
+ */
+export interface CardSectionSliceDefaultPrimary {
+  /**
+   * Cards field in *CardSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_section.default.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  cards: prismic.GroupField<Simplify<CardSectionSliceDefaultPrimaryCardsItem>>;
+}
+
+/**
+ * Default variation for CardSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CardSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CardSection*
+ */
+type CardSectionSliceVariation = CardSectionSliceDefault;
+
+/**
+ * CardSection Shared Slice
+ *
+ * - **API ID**: `card_section`
+ * - **Description**: CardSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSectionSlice = prismic.SharedSlice<
+  "card_section",
+  CardSectionSliceVariation
+>;
 
 /**
  * Item in *HeroSlider → Default → Primary → SliderImage*
@@ -153,6 +339,91 @@ export type HeroSliderSlice = prismic.SharedSlice<
   HeroSliderSliceVariation
 >;
 
+/**
+ * Primary content in *SalesSection → Default → Primary*
+ */
+export interface SalesSectionSliceDefaultPrimary {
+  /**
+   * Content with image field in *SalesSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sales_section.default.primary.content_with_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  content_with_image: prismic.ImageField<never>;
+
+  /**
+   * sale offer field in *SalesSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter offer detail.....
+   * - **API ID Path**: sales_section.default.primary.sale_offer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sale_offer: prismic.RichTextField;
+
+  /**
+   * Heading field in *SalesSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Enter heading here...
+   * - **API ID Path**: sales_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *SalesSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter sub description here...
+   * - **API ID Path**: sales_section.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Button field in *SalesSection → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your button name...
+   * - **API ID Path**: sales_section.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for SalesSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SalesSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SalesSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SalesSection*
+ */
+type SalesSectionSliceVariation = SalesSectionSliceDefault;
+
+/**
+ * SalesSection Shared Slice
+ *
+ * - **API ID**: `sales_section`
+ * - **Description**: SalesSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SalesSectionSlice = prismic.SharedSlice<
+  "sales_section",
+  SalesSectionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -178,11 +449,25 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ArticleSectionSlice,
+      ArticleSectionSliceDefaultPrimaryBlogCardItem,
+      ArticleSectionSliceDefaultPrimary,
+      ArticleSectionSliceVariation,
+      ArticleSectionSliceDefault,
+      CardSectionSlice,
+      CardSectionSliceDefaultPrimaryCardsItem,
+      CardSectionSliceDefaultPrimary,
+      CardSectionSliceVariation,
+      CardSectionSliceDefault,
       HeroSliderSlice,
       HeroSliderSliceDefaultPrimarySliderImageItem,
       HeroSliderSliceDefaultPrimary,
       HeroSliderSliceVariation,
       HeroSliderSliceDefault,
+      SalesSectionSlice,
+      SalesSectionSliceDefaultPrimary,
+      SalesSectionSliceVariation,
+      SalesSectionSliceDefault,
     };
   }
 }

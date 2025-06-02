@@ -11,14 +11,8 @@ export type HeroSliderProps = SliceComponentProps<Content.HeroSliderSlice>;
  * Component for "HeroSlider" Slices.
  */
 const HeroSlider: FC<HeroSliderProps> = ({ slice }) => {
-  console.log(slice, "slice");
-  
-  return (
-    <section
-    >
-     <HeroSlides slice={slice} />
-    </section>
-  );
+
+  return <HeroSlides slice={slice} />;
 };
 
 export default HeroSlider;

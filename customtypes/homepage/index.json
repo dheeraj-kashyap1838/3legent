@@ -11,6 +11,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "article_section": {
+              "type": "SharedSlice"
+            },
+            "sales_section": {
+              "type": "SharedSlice"
+            },
+            "card_section": {
+              "type": "SharedSlice"
+            },
             "hero_slider": {
               "type": "SharedSlice"
             }

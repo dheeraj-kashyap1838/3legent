@@ -4,17 +4,23 @@ import Link from "next/link";
 import React from "react";
 import type { ErrowButton } from "@/type/type";
 import Image from "next/image";
+import {PrismicLink } from "@prismicio/react";
+import { Content ,LinkField} from "@prismicio/client";
+
+
 
 interface ErrowProp {
-  data?: ErrowButton;
+  data?: LinkField;
 }
 
 function ErrowButton({ data }: ErrowProp) {
+  
   return (
-    <Link href={data?.path ?? ""} className="flex  border-b-[1px] gap-1 font-medium leading-7 tracking-[-0.4px] font_inter w-full" >
-      {data?.name}
-      <Image width={20} height={20} src={data?.icon ?? ''} alt='' />
-    </Link>
+    <div className="flex  border-b-[1px] gap-1 font-medium leading-7 tracking-[-0.4px] font_inter w-full" >
+      <PrismicLink field={data}/>
+      {/* {data?.name} */}
+      <Image width={20} height={20} src='/icon/arrow-right.svg' alt='' />
+    </div>
   );
 }
 
