@@ -12,7 +12,7 @@ export type SalesSectionProps = SliceComponentProps<Content.SalesSectionSlice>;
  * Component for "SalesSection" Slices.
  */
 const SalesSection: FC<SalesSectionProps> = ({ slice }) => {
-  return <Sales_Section data={slice} size="full" />;
+  return <Sales_Section data={slice}  />;
 };
 
 export default SalesSection;

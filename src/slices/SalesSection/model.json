@@ -12,10 +12,10 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "content_with_image": {
+        "image": {
           "type": "Image",
           "config": {
-            "label": "Content with image",
+            "label": "Image",
             "constraint": {
               "width": null,
               "height": null
@@ -57,6 +57,13 @@
             "allowTargetBlank": true,
             "allowText": true,
             "repeat": false
+          }
+        },
+        "container_size": {
+          "type": "Text",
+          "config": {
+            "label": "Container Size",
+            "placeholder": "Enter container size..."
           }
         }
       },
