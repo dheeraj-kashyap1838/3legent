@@ -8,7 +8,6 @@ import Link from "next/link";
 import formatDate from "@/utils/formateDate";
 import { createClient } from "@/prismicio";
 import { notFound } from "next/navigation";
-// import type { DateField } from "@prismicio/client";
 
 interface CardData {
   card_image?: ImageField;

@@ -1,7 +1,6 @@
 import { isFilled, KeyTextField, RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import React from "react";
-// import type { Content } from "@/type/type";
 
 interface ContentProp {
   data: { description: KeyTextField; heading: RichTextField };

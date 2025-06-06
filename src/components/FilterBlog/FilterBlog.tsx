@@ -11,7 +11,6 @@ import type { Content } from "@prismicio/client";
 
 interface BlogProp {
   data: Content.BlogDocument[];
-  // uid: string;
 }
 
 function FilterBlog({ data }: BlogProp) {

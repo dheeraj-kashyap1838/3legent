@@ -13,7 +13,6 @@ interface ArticleProp {
   data: Content.ArticleSectionSlice;
 }
 
-// Extend featured_blog type to include first_publication_date
 interface ExtendedBlogRelationship
   extends FilledContentRelationshipField<
     "blog",

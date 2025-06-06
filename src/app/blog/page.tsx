@@ -1,4 +1,3 @@
-// import NewsletterSection from "@/components/NewsletterSection/NewsletterSection";
 import FilterBlog from "@/components/FilterBlog/FilterBlog";
 import PageBanner from "@/components/PageBanner/PageBanner";
 import React from "react";
@@ -14,7 +13,6 @@ async function BlogPage() {
       <PageBanner data={pageData?.data} />
       <FilterBlog data={blogPosts} />
       <SliceZone slices={pageData?.data?.slices} components={components} />
-      {/* <NewsletterSection data={HomeData.NewsletterSection} /> */}
     </>
   );
 }
