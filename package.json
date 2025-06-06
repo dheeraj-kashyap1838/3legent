@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@prismicio/client": "^7.17.3",
+    "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^2.0.1",
     "@prismicio/react": "^3.2.1",
     "clsx": "^2.1.1",
+    "dateformat": "^5.0.3",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

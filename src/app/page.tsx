@@ -24,9 +24,9 @@ import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
+import { components } from "@/slices";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 
 export default async function Page() {
   const client = createClient();

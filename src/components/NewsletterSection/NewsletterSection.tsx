@@ -38,7 +38,7 @@ function NewsletterSection({ data }: NewsProp) {
         </form>
       </div>
     </section>
-  );
+  )
 }
 
 export default NewsletterSection;

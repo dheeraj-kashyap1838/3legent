@@ -15,7 +15,6 @@ function SalesSection({ data}: SalesSectionProps) {
   const { button, image, description, heading, sale_offer,container_size } =
     data?.primary;
 
-    console.log(data, 'dheeraj')
   return (
     <section className={`md:pt-12 pt-10 ${container_size !== 'w-full' ? 'md:px-0 px-6': null  }`}>
       <div

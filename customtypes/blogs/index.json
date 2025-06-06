@@ -1,0 +1,46 @@
+{
+  "format": "custom",
+  "id": "blogs",
+  "label": "Blogs",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "banner_image": {
+        "type": "Image",
+        "config": {
+          "label": "banner image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "title",
+          "placeholder": "Enter title here...",
+          "allowTargetBlank": true,
+          "multi": "heading2,heading3"
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "Enter sub description here..."
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "news_letter": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

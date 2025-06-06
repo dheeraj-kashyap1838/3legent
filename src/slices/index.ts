@@ -8,6 +8,8 @@ export const components = {
   contact_form: dynamic(() => import("./ContactForm")),
   content_section: dynamic(() => import("./ContentSection")),
   hero_slider: dynamic(() => import("./HeroSlider")),
+  image_group: dynamic(() => import("./ImageGroup")),
   news_letter: dynamic(() => import("./NewsLetter")),
   sales_section: dynamic(() => import("./SalesSection")),
+  split_content: dynamic(() => import("./SplitContent")),
 };

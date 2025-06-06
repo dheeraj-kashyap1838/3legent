@@ -13,7 +13,6 @@ interface CardProp {
 }
 
 function SmallCard({ data, variation }: CardProp) {
-  // console.log(data, "dheeraj");
   const { card_icon, description, heading } = data;
 
   return (

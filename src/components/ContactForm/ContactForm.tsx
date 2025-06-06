@@ -9,7 +9,6 @@ interface FormProp {
 
 function ContactForm({ data }: FormProp) {
   const { button, form_input, map } = data?.primary;
-  console.log(data);
   return (
     <section className="px-6 md:pt-12 md:pb-20 py-10">
       <div className="container mx-auto">
