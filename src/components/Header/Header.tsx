@@ -36,7 +36,7 @@ function Header({ data }: HeaderProp) {
         <nav className="max-w-[324px] md:flex font-medium text-[14px] hidden justify-between w-full">
           {data.nav.map((elem, id) => {
             return (
-              <Link key={id} href={elem.path}>
+              <Link className="text-black" key={id} href={elem.path}>
                 {elem.name}
               </Link>
             );

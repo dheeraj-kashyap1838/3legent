@@ -76,7 +76,7 @@ export const FooterSection = {
     { name: "Product", path: "/" },
     { name: "Blog", path: "/blog" },
     { name: "Contact Us", path: "/contact" },
-  ],
+  ],  
   legal: {
     copyright: "© 2023 3legant. All rights reserved",
     privacyPolicy: "Privacy Policy",
@@ -402,7 +402,7 @@ export const BlogData = {
       },
       {
         label: "Blog",
-        url: "/Blog",
+        url: "/blog",
         class: "active",
       },
     ],

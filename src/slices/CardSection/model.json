@@ -46,6 +46,73 @@
               }
             }
           }
+        },
+        "background_color": {
+          "type": "Select",
+          "config": {
+            "label": "Background Color",
+            "placeholder": "Select background color...",
+            "options": [
+              "bg-white",
+              "bg_primary"
+            ],
+            "default_value": "bg-white"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "cardWithCenterAlign",
+      "name": "Card with center align",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "cards": {
+          "type": "Group",
+          "config": {
+            "label": "Cards",
+            "repeat": true,
+            "fields": {
+              "card_icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Card icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "heading": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Heading",
+                  "placeholder": "Enter card heading...",
+                  "allowTargetBlank": true,
+                  "multi": "heading2,heading3"
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "Enter sub description here...",
+                  "allowTargetBlank": true,
+                  "multi": "heading2,heading3"
+                }
+              }
+            }
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Enter heading here...",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3"
+          }
         }
       },
       "items": {}
