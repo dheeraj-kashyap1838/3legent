@@ -15,9 +15,8 @@ interface HeaderProp {
 
 function Header({ data }: HeaderProp) {
   const [mobile_nav, setMobile_nav] = useState(false);
-  const { logo, nav, social } = data;
+  const { logo, nav } = data;
 
-  console.log("dataD", social);
   return (
     <header className="px-6 py-[18px] fixed top-10px  left-0 z-30 w-full max-h-[60px] h-full bg-white">
       <div className="container w-full z-10  mx-auto max-h-[60px] h-full  flex justify-between items-center">
@@ -116,7 +115,7 @@ function Header({ data }: HeaderProp) {
               </Link>
             </div>
             <div className="flex max-w-[120px] w-full justify-between">
-              {social?.map((elem, id) => {
+              {/* {social?.map((elem, id) => {
                 return (
                   <Link href="" key={id}>
                     {isFilled.image(elem?.media_icon) && (
@@ -127,7 +126,7 @@ function Header({ data }: HeaderProp) {
                     )}
                   </Link>
                 );
-              })}
+              })} */}
             </div>
           </div>
         </nav>

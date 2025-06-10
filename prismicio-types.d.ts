@@ -160,14 +160,30 @@ export interface FooterDocumentDataNavItem {
  */
 export interface FooterDocumentDataSocialItem {
   /**
-   * Media Icon field in *Footer → social*
+   * social type field in *Footer → social*
    *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.social[].media_icon
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Field Type**: Select
+   * - **Placeholder**: Enter social type here...
+   * - **API ID Path**: footer.social[].social_type
+   * - **Documentation**: https://prismic.io/docs/field#select
    */
-  media_icon: prismic.ImageField<never>;
+  social_type: prismic.SelectField<"facebook" | "instagram" | "youtube">;
+
+  /**
+   * social link field in *Footer → social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your link here...
+   * - **API ID Path**: footer.social[].social_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  social_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**
@@ -300,14 +316,30 @@ export interface HeaderDocumentDataNavItem {
  */
 export interface HeaderDocumentDataSocialItem {
   /**
-   * Media Icon field in *Header → social*
+   * social link field in *Header → social*
    *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.social[].media_icon
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your social link here...
+   * - **API ID Path**: header.social[].social_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  media_icon: prismic.ImageField<never>;
+  social_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * social type field in *Header → social*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select your type
+   * - **API ID Path**: header.social[].social_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  social_type: prismic.SelectField<"facebook" | "instagram" | "youtube">;
 }
 
 /**

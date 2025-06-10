@@ -76,12 +76,23 @@
           "label": "social",
           "repeat": true,
           "fields": {
-            "media_icon": {
-              "type": "Image",
+            "social_type": {
+              "type": "Select",
               "config": {
-                "label": "Media Icon",
-                "constraint": {},
-                "thumbnails": []
+                "label": "social type",
+                "placeholder": "Enter social type here...",
+                "options": ["facebook", "instagram", "youtube"]
+              }
+            },
+            "social_link": {
+              "type": "Link",
+              "config": {
+                "label": "social link",
+                "placeholder": "Enter your link here...",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
               }
             }
           }
