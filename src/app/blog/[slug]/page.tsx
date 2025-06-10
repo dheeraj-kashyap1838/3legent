@@ -12,7 +12,7 @@ async function SingleBlog({ params }: { params: tParams }) {
 
   return (
     <>
-      <SingleArticle data={blog.data} date={blog.first_publication_date} />
+      <SingleArticle data={blog?.data} date={blog?.first_publication_date} />
       <SliceZone slices={blog?.data?.slices} components={components} />
     </>
   );

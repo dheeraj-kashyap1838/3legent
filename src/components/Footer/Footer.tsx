@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { type Content } from "@prismicio/client";
+import { isFilled, type Content } from "@prismicio/client";
 import { PrismicImage, PrismicLink } from "@prismicio/react";
 interface FooterProp {
   data: Content.FooterDocumentData;
@@ -23,10 +23,10 @@ function Footer({ data }: FooterProp) {
             </div>
           </div>
           <div className="flex md:flex-row flex-col max-w-[554px] lg:mx-0 mx-auto w-full lg:justify-end justify-center  gap-10 ">
-            {nav.map((elem, id) => {
+            {nav?.map((elem, id) => {
               return (
                 <div key={id} className="text-center text-[#FEFEFE]">
-                  <PrismicLink field={elem.nav_link} />
+                  <PrismicLink field={elem?.nav_link} />
                 </div>
               );
             })}
@@ -39,15 +39,20 @@ function Footer({ data }: FooterProp) {
               {copyright}
             </p>
             <div className="flex gap-7 mx-auto justify-self-start">
-              <PrismicLink field={privacy}/>
-              <PrismicLink field={terms}/>
+              {isFilled.link(privacy) && <PrismicLink field={privacy} />}
+              {isFilled.link(terms) && <PrismicLink field={terms} />}
             </div>
           </div>
           <div className="flex max-w-[120px] lg:mx-0  mx-auto w-full justify-between">
-            {social.map((elem, id) => {
+            {social?.map((elem, id) => {
               return (
-                <Link key={id} href=''>
-                  <PrismicImage field={elem.media_icon} className="w-[24px]"/>
+                <Link key={id} href="">
+                  {isFilled.image(elem?.media_icon) && (
+                    <PrismicImage
+                      field={elem?.media_icon}
+                      className="w-[24px]"
+                    />
+                  )}
                 </Link>
               );
             })}

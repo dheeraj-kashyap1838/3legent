@@ -19,7 +19,7 @@ function CardSection({ data }: CardSectionProps) {
       {data?.variation === "default" && (
         <section className={`px-6  ${data?.primary?.background_color}`}>
           <div className="container flex mx-auto flex-wrap justify-center md:gap-6 gap-2 ">
-            {cards.map((card, id) => {
+            {cards?.map((card, id) => {
               return (
                 <div key={id} className="max-w-[262px] w-full">
                   <SmallCard data={card} variation="default" />
@@ -38,7 +38,7 @@ function CardSection({ data }: CardSectionProps) {
               )}
             </div>
             <div className="flex mx-auto w-full md:flex-row flex-col justify-center md:gap-6 gap-2">
-              {cards.map((card, id) => {
+              {cards?.map((card, id) => {
                 return (
                   <div
                     key={id}

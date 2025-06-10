@@ -18,15 +18,15 @@ function ImageGroup({ data }: GroupProp) {
         className="container mx-auto flex flex-wrap justify-center md:gap-6 gap-4 "
         id="imageGroup"
       >
-        {group_image.map((elem, id) => {
+        {group_image?.map((elem, id) => {
           return (
             <div key={id} className="max-w-[548px] md:shrink w-full">
               
-              <PrismicImage field={elem.image}/>
+              <PrismicImage field={elem?.image}/>
             </div>
           );
         })}
-        {content.map((elem, id) => {
+        {content?.map((elem, id) => {
           return (
             <div key={id} className="w-full">
               <BlogContent key={id} data={elem} />

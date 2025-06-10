@@ -42,7 +42,9 @@ function Header({ data }: HeaderProp) {
           {nav?.map((elem, id) => {
             return (
               <div key={id}>
-                <PrismicLink field={elem?.nav_link} />
+                {isFilled.link(elem.nav_link) && (
+                  <PrismicLink field={elem?.nav_link} />
+                )}
               </div>
             );
           })}
@@ -60,17 +62,19 @@ function Header({ data }: HeaderProp) {
               <input
                 className="ps-[48px] w-full py-[11px] rounded-[6px] border-[1px] border-[#6C7275]"
                 type="text"
-                // placeholder={data.serch.placeholder}
+                placeholder="Search"
               />
             </label>
             <div className="w-full gap-4 py-4 flex flex-col justify-center ">
-              {nav.map((elem, id) => {
+              {nav?.map((elem, id) => {
                 return (
                   <div
                     key={id}
                     className="pb-4 font-medium text-[14px] border-b-[1px] border_primary"
                   >
-                    <PrismicLink field={elem.nav_link} />
+                    {isFilled.link(elem?.nav_link) && (
+                      <PrismicLink field={elem?.nav_link} />
+                    )}
                   </div>
                 );
               })}
@@ -80,10 +84,7 @@ function Header({ data }: HeaderProp) {
           {/*========= mobile bottom ======    */}
           <div className="w-full flex gap-2 flex-col">
             <div className="flex pb-2 border-b-[1px] border_primary  justify-between">
-              <h2 className="font-medium text-lg text_primary">
-                {/* {data.cart.name} */}
-                Cart
-              </h2>
+              <h2 className="font-medium text-lg text_primary">Cart</h2>
               <div className=" flex items-center gap-1 ">
                 <Image
                   width={24}
@@ -118,12 +119,15 @@ function Header({ data }: HeaderProp) {
               {social?.map((elem, id) => {
                 return (
                   <Link href="" key={id}>
-                    <PrismicImage field={elem.media_icon} className="w-[24px]"/>
+                    {isFilled.image(elem?.media_icon) && (
+                      <PrismicImage
+                        field={elem?.media_icon}
+                        className="w-[24px]"
+                      />
+                    )}
                   </Link>
                 );
               })}
-
-             
             </div>
           </div>
         </nav>
@@ -173,7 +177,7 @@ function Header({ data }: HeaderProp) {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </header>
   );
 }
