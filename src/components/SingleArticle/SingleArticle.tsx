@@ -20,7 +20,6 @@ interface ArticleProp {
 
 function SingleArticle({ data, date }: ArticleProp) {
   const { card_heading, card_image } = data;
-  // const formatted = formatDate(date); // Output: June 5, 2025
   return (
     <section className="px-6 pb-5">
       <div className="container mx-auto">

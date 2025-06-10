@@ -4,17 +4,20 @@ import React, { useState } from "react";
 import type { Header } from "@/type/type";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "../Button/Button";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
+import { isFilled, type Content } from "@prismicio/client";
+import { PrismicImage, PrismicLink } from "@prismicio/react";
 
 interface HeaderProp {
-  data: Header;
+  data: Content.HeaderDocumentData;
 }
 
 function Header({ data }: HeaderProp) {
   const [mobile_nav, setMobile_nav] = useState(false);
+  const { logo, nav, social } = data;
 
+  console.log("dataD", social);
   return (
     <header className="px-6 py-[18px] fixed top-10px  left-0 z-30 w-full max-h-[60px] h-full bg-white">
       <div className="container w-full z-10  mx-auto max-h-[60px] h-full  flex justify-between items-center">
@@ -27,18 +30,20 @@ function Header({ data }: HeaderProp) {
           >
             <FiMenu />
           </div>
-          <Link href="/">
-            <Image width={105} height={24} src={data.logo.icon} alt="" />
+          <Link href="/" className=" w-full">
+            {isFilled.image(logo) && (
+              <PrismicImage field={logo} className="w-[105px] h-[24px]" />
+            )}
           </Link>
         </div>
 
         {/* ========== Desktop Nav ======== */}
         <nav className="max-w-[324px] md:flex font-medium text-[14px] hidden justify-between w-full">
-          {data.nav.map((elem, id) => {
+          {nav?.map((elem, id) => {
             return (
-              <Link className="text-black" key={id} href={elem.path}>
-                {elem.name}
-              </Link>
+              <div key={id}>
+                <PrismicLink field={elem?.nav_link} />
+              </div>
             );
           })}
         </nav>
@@ -55,19 +60,18 @@ function Header({ data }: HeaderProp) {
               <input
                 className="ps-[48px] w-full py-[11px] rounded-[6px] border-[1px] border-[#6C7275]"
                 type="text"
-                placeholder={data.serch.placeholder}
+                // placeholder={data.serch.placeholder}
               />
             </label>
             <div className="w-full gap-4 py-4 flex flex-col justify-center ">
-              {data.nav.map((elem, id) => {
+              {nav.map((elem, id) => {
                 return (
-                  <Link
+                  <div
                     key={id}
                     className="pb-4 font-medium text-[14px] border-b-[1px] border_primary"
-                    href={elem.path}
                   >
-                    {elem.name}
-                  </Link>
+                    <PrismicLink field={elem.nav_link} />
+                  </div>
                 );
               })}
             </div>
@@ -77,38 +81,49 @@ function Header({ data }: HeaderProp) {
           <div className="w-full flex gap-2 flex-col">
             <div className="flex pb-2 border-b-[1px] border_primary  justify-between">
               <h2 className="font-medium text-lg text_primary">
-                {data.cart.name}
+                {/* {data.cart.name} */}
+                Cart
               </h2>
               <div className=" flex items-center gap-1 ">
-                <Image width={24} height={24} src={data.cart.icon} alt="" />
+                <Image
+                  width={24}
+                  height={24}
+                  src="/icon/shoppingbag.svg"
+                  alt=""
+                />
                 <div className="w-[20px] h-[20px] pb-0.5 bg-black text-white flex justify-center items-center rounded-full">
-                  {data.cart.item}
+                  2
                 </div>
               </div>
             </div>
 
             <div className="flex pb-2 border-b-[1px] border_primary  justify-between">
-              <h2 className="font-medium text-lg text_primary">
-                {data.wishlist.name}
-              </h2>
+              <h2 className="font-medium text-lg text_primary">Wishlist</h2>
               <div className=" flex items-center gap-1 ">
-                <Image width={24} height={24} src={data.wishlist.icon} alt="" />
+                <Image width={24} height={24} src="/icon/heart.svg" alt="" />
                 <div className="w-[20px] h-[20px] pb-0.5 bg-black text-white flex justify-center items-center rounded-full">
-                  {data.wishlist.item}
+                  2
                 </div>
               </div>
             </div>
             <div className="py-[19px] flex">
-              <Button data={data.button} />
+              <Link
+                className="w-full text-center font-medium text-lg py-2.5 bg-black text-white rounded-md"
+                href=""
+              >
+                Sign in
+              </Link>
             </div>
             <div className="flex max-w-[120px] w-full justify-between">
-              {data.media.map((elem, id) => {
+              {social?.map((elem, id) => {
                 return (
-                  <Link key={id} href={elem.path}>
-                    <Image width={24} height={24} src={elem.icon} alt="" />
+                  <Link href="" key={id}>
+                    <PrismicImage field={elem.media_icon} className="w-[24px]"/>
                   </Link>
                 );
               })}
+
+             
             </div>
           </div>
         </nav>
@@ -118,43 +133,44 @@ function Header({ data }: HeaderProp) {
             className="md:block cursor-pointer hidden"
             width={24}
             height={24}
-            src={data.serch.icon}
+            src="/icon/search1.svg"
             alt=""
           />
-          <Link href={data.user.path}>
+          <Link href="">
             <Image
               className="md:block hidden"
               width={24}
               height={24}
-              src={data.user.icon}
-              alt={data.user.name}
+              src="/icon/user-circle.svg"
+              alt=""
             />
           </Link>
-          {/* <div className=" flex items-center gap-1 "> */}
-          <div
-            className={`${
-              mobile_nav ? "hidden" : "block"
-            } flex items-center gap-1`}
-          >
-            <Link href={data.cart.path}>
-              <Image
-                width={24}
-                height={24}
-                src={data.cart.icon}
-                alt={data.cart.name}
-              />
-            </Link>
-            <Link href={data.cart.path}>
-              <div className="w-[20px] h-[20px] pb-0.5 bg-black text-white flex justify-center items-center rounded-full">
-                {data.cart.item}
-              </div>
-            </Link>
-          </div>
-          <div
-            className={`w-[24px] h-[24px] md:hidden  ${mobile_nav ? "block" : "hidden"}`}
-            onClick={() => setMobile_nav(!mobile_nav)}
-          >
-            <RxCross2 className="w-full h-full" />
+          <div className=" flex items-center gap-1 ">
+            <div
+              className={`${
+                mobile_nav ? "hidden" : "block"
+              } flex items-center gap-1`}
+            >
+              <Link href="">
+                <Image
+                  width={24}
+                  height={24}
+                  src="/icon/shoppingbag.svg"
+                  alt="cart"
+                />
+              </Link>
+              <Link href="">
+                <div className="w-[20px] h-[20px] pb-0.5 bg-black text-white flex justify-center items-center rounded-full">
+                  2
+                </div>
+              </Link>
+            </div>
+            <div
+              className={`w-[24px] h-[24px] md:hidden  ${mobile_nav ? "block" : "hidden"}`}
+              onClick={() => setMobile_nav(!mobile_nav)}
+            >
+              <RxCross2 className="w-full h-full" />
+            </div>
           </div>
         </div>
       </div>

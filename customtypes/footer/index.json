@@ -1,0 +1,92 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": "Enter sub description here..."
+        }
+      },
+      "nav": {
+        "type": "Group",
+        "config": {
+          "label": "Nav",
+          "repeat": true,
+          "fields": {
+            "nav_link": {
+              "type": "Link",
+              "config": {
+                "label": "Nav Link",
+                "placeholder": "Enter your nav link here...",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      },
+      "copyright": {
+        "type": "Text",
+        "config": {
+          "label": "copyright",
+          "placeholder": "Enter copyright text here..."
+        }
+      },
+      "privacy": {
+        "type": "Link",
+        "config": {
+          "label": "Privacy",
+          "placeholder": "Enter your privacy placeholder...",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "terms": {
+        "type": "Link",
+        "config": {
+          "label": "Terms",
+          "placeholder": "Enter terms placeholder here....",
+          "select": null,
+          "allowTargetBlank": true,
+          "allowText": true,
+          "repeat": false
+        }
+      },
+      "social": {
+        "type": "Group",
+        "config": {
+          "label": "social",
+          "repeat": true,
+          "fields": {
+            "media_icon": {
+              "type": "Image",
+              "config": {
+                "label": "Media Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

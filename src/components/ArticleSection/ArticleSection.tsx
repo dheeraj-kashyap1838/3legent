@@ -23,7 +23,9 @@ interface ExtendedBlogRelationship
 }
 
 function ArticleSection({ data }: ArticleProp) {
-  const { heading, button, featured_blog } = data?.primary;
+  if (!data?.primary) return null; 
+
+  const { heading, button, featured_blog } = data.primary;
 
   return (
     <section className="px-6 md:py-20 py-10 ">

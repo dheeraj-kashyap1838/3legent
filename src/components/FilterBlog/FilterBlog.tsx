@@ -14,7 +14,6 @@ interface BlogProp {
 }
 
 function FilterBlog({ data }: BlogProp) {
-  console.log(data);
   return (
     <section className="px-6 ">
       <div className="container mx-auto flex flex-col ">
