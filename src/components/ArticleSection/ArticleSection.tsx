@@ -23,7 +23,9 @@ interface ExtendedBlogRelationship
 }
 
 function ArticleSection({ data }: ArticleProp) {
-  const { heading, button, featured_blog } = data?.primary;
+  if (!data?.primary) return null; 
+
+  const { heading, button, featured_blog } = data.primary;
 
   return (
     <section className="px-6 md:py-20 py-10 ">
@@ -41,12 +43,12 @@ function ArticleSection({ data }: ArticleProp) {
           {featured_blog
             ? featured_blog.map((card, id) => {
                 if (isFilled.contentRelationship(card.featured_blog)) {
-                  const blog = card.featured_blog as ExtendedBlogRelationship;
+                  const blog = card?.featured_blog as ExtendedBlogRelationship;
 
                   return (
                     <div key={id} className="max-w-[357px] w-full">
                       <BlogCard
-                        uid={blog.uid}
+                        uid={blog?.uid}
                         date={
                           card.with_date ? blog.first_publication_date : null
                         }

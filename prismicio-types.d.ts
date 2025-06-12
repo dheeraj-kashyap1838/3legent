@@ -134,6 +134,268 @@ interface BlogsDocumentData {
 export type BlogsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<BlogsDocumentData>, "blogs", Lang>;
 
+/**
+ * Item in *Footer → Nav*
+ */
+export interface FooterDocumentDataNavItem {
+  /**
+   * Nav Link field in *Footer → Nav*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your nav link here...
+   * - **API ID Path**: footer.nav[].nav_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  nav_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Item in *Footer → social*
+ */
+export interface FooterDocumentDataSocialItem {
+  /**
+   * social type field in *Footer → social*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Enter social type here...
+   * - **API ID Path**: footer.social[].social_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  social_type: prismic.SelectField<"facebook" | "instagram" | "youtube">;
+
+  /**
+   * social link field in *Footer → social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your link here...
+   * - **API ID Path**: footer.social[].social_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  social_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Content for Footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * Logo field in *Footer*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter sub description here...
+   * - **API ID Path**: footer.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Nav field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.nav[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  nav: prismic.GroupField<Simplify<FooterDocumentDataNavItem>>;
+
+  /**
+   * copyright field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Enter copyright text here...
+   * - **API ID Path**: footer.copyright
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  copyright: prismic.KeyTextField;
+
+  /**
+   * Privacy field in *Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your privacy placeholder...
+   * - **API ID Path**: footer.privacy
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  privacy: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Terms field in *Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter terms placeholder here....
+   * - **API ID Path**: footer.terms
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  terms: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * social field in *Footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social: prismic.GroupField<Simplify<FooterDocumentDataSocialItem>>;
+}
+
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
+/**
+ * Item in *Header → Nav*
+ */
+export interface HeaderDocumentDataNavItem {
+  /**
+   * Nav Link field in *Header → Nav*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your nav link here...
+   * - **API ID Path**: header.nav[].nav_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  nav_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Item in *Header → social*
+ */
+export interface HeaderDocumentDataSocialItem {
+  /**
+   * social link field in *Header → social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter your social link here...
+   * - **API ID Path**: header.social[].social_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  social_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * social type field in *Header → social*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Select your type
+   * - **API ID Path**: header.social[].social_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  social_type: prismic.SelectField<"facebook" | "instagram" | "youtube">;
+}
+
+/**
+ * Content for Header documents
+ */
+interface HeaderDocumentData {
+  /**
+   * Logo field in *Header*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Nav field in *Header*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.nav[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  nav: prismic.GroupField<Simplify<HeaderDocumentDataNavItem>>;
+
+  /**
+   * social field in *Header*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.social[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social: prismic.GroupField<Simplify<HeaderDocumentDataSocialItem>>;
+}
+
+/**
+ * Header document from Prismic
+ *
+ * - **API ID**: `header`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HeaderDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<HeaderDocumentData>,
+    "header",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice =
   | NewsLetterSlice
   | ArticleSectionSlice
@@ -272,6 +534,8 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BlogDocument
   | BlogsDocument
+  | FooterDocument
+  | HeaderDocument
   | HomepageDocument
   | PageDocument;
 
@@ -1174,6 +1438,14 @@ declare module "@prismicio/client" {
       BlogsDocument,
       BlogsDocumentData,
       BlogsDocumentDataSlicesSlice,
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataNavItem,
+      FooterDocumentDataSocialItem,
+      HeaderDocument,
+      HeaderDocumentData,
+      HeaderDocumentDataNavItem,
+      HeaderDocumentDataSocialItem,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,

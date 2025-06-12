@@ -20,7 +20,6 @@ interface ArticleProp {
 
 function SingleArticle({ data, date }: ArticleProp) {
   const { card_heading, card_image } = data;
-  // const formatted = formatDate(date); // Output: June 5, 2025
   return (
     <section className="px-6 pb-5">
       <div className="container mx-auto">
@@ -67,7 +66,6 @@ function SingleArticle({ data, date }: ArticleProp) {
         </p>
         <div className="flex flex-col font_inter ">
           <h1 className="font-medium text-[28px] leading-[34px] tracking-[-0.6]">
-            {/* {isFilled.richText(heading) && <PrismicRichText field={heading} />} */}
             A cleaning hub with built-in ventilation
           </h1>
           <p className="font-normal leading-[26px]">

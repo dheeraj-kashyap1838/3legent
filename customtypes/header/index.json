@@ -1,0 +1,67 @@
+{
+  "format": "custom",
+  "id": "header",
+  "label": "Header",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "nav": {
+        "type": "Group",
+        "config": {
+          "label": "Nav",
+          "repeat": true,
+          "fields": {
+            "nav_link": {
+              "type": "Link",
+              "config": {
+                "label": "Nav Link",
+                "placeholder": "Enter your nav link here...",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            }
+          }
+        }
+      },
+      "social": {
+        "type": "Group",
+        "config": {
+          "label": "social",
+          "repeat": true,
+          "fields": {
+            "social_link": {
+              "type": "Link",
+              "config": {
+                "label": "social link",
+                "placeholder": "Enter your social link here...",
+                "select": null,
+                "allowTargetBlank": true,
+                "allowText": true,
+                "repeat": false
+              }
+            },
+            "social_type": {
+              "type": "Select",
+              "config": {
+                "label": "social type",
+                "placeholder": "Select your type",
+                "options": ["facebook", "instagram", "youtube"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -14,7 +14,6 @@ interface BlogProp {
 }
 
 function FilterBlog({ data }: BlogProp) {
-  console.log(data);
   return (
     <section className="px-6 ">
       <div className="container mx-auto flex flex-col ">
@@ -53,13 +52,12 @@ function FilterBlog({ data }: BlogProp) {
         </div>
         {/* ================ Tabs Cards ============== */}
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto justify-center gap-x-[25px] gap-y-[40px]">
-          {data.map((card, id) => {
-            // console.log(card.uid)
+          {data?.map((card, id) => {
             return (
               <div key={id}>
                 <div className=" max-w-[357px] w-full">
                   <BlogCard 
-                  uid={card.uid} 
+                  uid={card?.uid} 
                   date={card?.last_publication_date}
                    />
                 </div>
