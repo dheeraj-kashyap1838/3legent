@@ -27,7 +27,9 @@ function Footer({ data }: FooterProp) {
             {nav?.map((elem, id) => {
               return (
                 <div key={id} className="text-center text-[#FEFEFE]">
-                  <PrismicLink field={elem?.nav_link} />
+                  {isFilled.link(elem.nav_link) && (
+                    <PrismicLink field={elem?.nav_link} />
+                  )}
                 </div>
               );
             })}
@@ -49,7 +51,7 @@ function Footer({ data }: FooterProp) {
               // console.log(elem.social_link.url)
               return (
                 <PrismicLink key={id} field={elem.social_link} target="_blank">
-                  {SocialIcon(elem?.social_type)}
+                  <SocialIcon type={elem?.social_type} variation="footer" />
                 </PrismicLink>
               );
             })}

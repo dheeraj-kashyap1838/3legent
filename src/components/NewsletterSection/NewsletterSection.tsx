@@ -28,7 +28,7 @@ function NewsletterSection({ data }: NewsProp) {
         <form className="max-w-[488px] gap-2 mt-8 flex justify-between border-b-2 pb-3 border-[#6C727580] items-center mx-auto w-full">
           <Image width={24} height={24} src="/icon/mail.svg" alt="" />
           <input
-            className="max-w-[396px] w-full placeholder-[#6c7275]"
+            className="max-w-[396px] focus:outline-0 w-full placeholder-[#6c7275]"
             type="text"
             placeholder={place_holder ?? ""}
           />

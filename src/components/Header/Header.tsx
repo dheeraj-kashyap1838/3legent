@@ -8,6 +8,7 @@ import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
 import { isFilled, type Content } from "@prismicio/client";
 import { PrismicImage, PrismicLink } from "@prismicio/react";
+import SocialIcon from "@/utils/socialIcon";
 
 interface HeaderProp {
   data: Content.HeaderDocumentData;
@@ -15,7 +16,7 @@ interface HeaderProp {
 
 function Header({ data }: HeaderProp) {
   const [mobile_nav, setMobile_nav] = useState(false);
-  const { logo, nav } = data;
+  const { logo, nav, social } = data;
 
   return (
     <header className="px-6 py-[18px] fixed top-10px  left-0 z-30 w-full max-h-[60px] h-full bg-white">
@@ -39,6 +40,7 @@ function Header({ data }: HeaderProp) {
         {/* ========== Desktop Nav ======== */}
         <nav className="max-w-[324px] md:flex font-medium text-[14px] hidden justify-between w-full">
           {nav?.map((elem, id) => {
+            // console.log(elem.nav_link, 'dheeraj');
             return (
               <div key={id}>
                 {isFilled.link(elem.nav_link) && (
@@ -66,12 +68,13 @@ function Header({ data }: HeaderProp) {
             </label>
             <div className="w-full gap-4 py-4 flex flex-col justify-center ">
               {nav?.map((elem, id) => {
+                // console.log(elem.nav_link);
                 return (
                   <div
                     key={id}
                     className="pb-4 font-medium text-[14px] border-b-[1px] border_primary"
                   >
-                    {isFilled.link(elem?.nav_link) && (
+                    {isFilled.link(elem.nav_link) && (
                       <PrismicLink field={elem?.nav_link} />
                     )}
                   </div>
@@ -115,18 +118,17 @@ function Header({ data }: HeaderProp) {
               </Link>
             </div>
             <div className="flex max-w-[120px] w-full justify-between">
-              {/* {social?.map((elem, id) => {
+              {social?.map((elem, id) => {
                 return (
-                  <Link href="" key={id}>
-                    {isFilled.image(elem?.media_icon) && (
-                      <PrismicImage
-                        field={elem?.media_icon}
-                        className="w-[24px]"
-                      />
-                    )}
-                  </Link>
+                  <PrismicLink
+                    key={id}
+                    field={elem.social_link}
+                    target="_blank"
+                  >
+                    <SocialIcon type={elem?.social_type} variation="header" />
+                  </PrismicLink>
                 );
-              })} */}
+              })}
             </div>
           </div>
         </nav>
@@ -176,7 +178,7 @@ function Header({ data }: HeaderProp) {
             </div>
           </div>
         </div>
-      </div> 
+      </div>
     </header>
   );
 }
