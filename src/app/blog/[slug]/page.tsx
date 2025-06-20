@@ -2,8 +2,17 @@ import SingleArticle from "@/components/SingleArticle/SingleArticle";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { SliceZone } from "@prismicio/react";
+import GetMetadata from "@/components/GenerateMeta/GenerateMeta";
+
 
 type tParams = Promise<{ slug: string }>;
+
+
+
+export async function generateMetadata(){
+  return await GetMetadata({ props: "blog"});
+}
+
 
 async function SingleBlog({ params }: { params: tParams }) {
   const { slug } = await params;

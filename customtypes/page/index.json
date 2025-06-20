@@ -12,6 +12,15 @@
           "label": "UID"
         }
       },
+      "no_sitemap": {
+        "type": "Boolean",
+        "config": {
+          "label": "No Sitemap",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
