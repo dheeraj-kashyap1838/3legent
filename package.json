@@ -2,12 +2,14 @@
   "name": "3legent",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "@prismicio/client": "^7.17.3",
@@ -17,6 +19,7 @@
     "clsx": "^2.1.1",
     "dateformat": "^5.0.3",
     "next": "15.3.2",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
@@ -37,4 +40,5 @@
     "tailwindcss": "^4.1.7",
     "typescript": "^5"
   }
+  
 }

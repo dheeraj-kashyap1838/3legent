@@ -40,6 +40,15 @@
           "repeat": false
         }
       },
+      "no_sitemap": {
+        "type": "Boolean",
+        "config": {
+          "label": "No Sitemap",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -58,6 +67,30 @@
               "type": "SharedSlice"
             }
           }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "Enter your meta title here..."
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "Enter your meta description here..."
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {},
+          "thumbnails": []
         }
       }
     }
