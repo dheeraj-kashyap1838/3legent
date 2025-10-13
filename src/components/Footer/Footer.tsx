@@ -48,7 +48,6 @@ function Footer({ data }: FooterProp) {
           </div>
           <div className="flex max-w-[120px] lg:mx-0  mx-auto w-full justify-between">
             {social?.map((elem, id) => {
-              // console.log(elem.social_link.url)
               return (
                 <PrismicLink key={id} field={elem.social_link} target="_blank">
                   <SocialIcon type={elem?.social_type} variation="footer" />

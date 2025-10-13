@@ -16,7 +16,6 @@ async function BlogPage() {
   const client = createClient();
   const blogPosts = await client.getAllByType("blog");
   const pageData = await client.getSingle("blogs");
-  console.log('pageData', pageData)
 
   return (
     <>

@@ -40,7 +40,6 @@ function Header({ data }: HeaderProp) {
         {/* ========== Desktop Nav ======== */}
         <nav className="max-w-[324px] md:flex font-medium text-[14px] hidden justify-between w-full">
           {nav?.map((elem, id) => {
-            // console.log(elem.nav_link, 'dheeraj');
             return (
               <div key={id}>
                 {isFilled.link(elem.nav_link) && (
@@ -68,7 +67,6 @@ function Header({ data }: HeaderProp) {
             </label>
             <div className="w-full gap-4 py-4 flex flex-col justify-center ">
               {nav?.map((elem, id) => {
-                // console.log(elem.nav_link);
                 return (
                   <div
                     key={id}

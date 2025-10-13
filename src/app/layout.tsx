@@ -33,7 +33,6 @@ const footerData = await getFooterData();
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // console.log(children);
   return (
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
