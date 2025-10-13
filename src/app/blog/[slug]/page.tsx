@@ -1,22 +1,28 @@
-// import SingleArticle from "@/components/SingleArticle/SingleArticle";
-// import ImageGroup from "@/components/ImageGroup/ImageGroup";
-// import { BlogData,HomeData } from "@/data/data";
-// import SplitContent from "@/components/SplitContent/SplitContent";
-// import MoreArticle from "@/components/MoreArticle/MoreArticle";
-// import NewsletterSection from "@/components/NewsletterSection/NewsletterSection";
+import SingleArticle from "@/components/SingleArticle/SingleArticle";
+import { createClient } from "@/prismicio";
+import { components } from "@/slices";
+import { SliceZone } from "@prismicio/react";
+import GetMetadata from "@/components/GenerateMeta/GenerateMeta";
 
 
-function SingleBlog() {
-  // const SingleBlog = BlogData.SingleBlog;
+type tParams = Promise<{ slug: string }>;
+
+
+
+export async function generateMetadata(){
+  return await GetMetadata({ props: "blog"});
+}
+
+
+async function SingleBlog({ params }: { params: tParams }) {
+  const { slug } = await params;
+  const client = createClient();
+  const blog = await client.getByUID("blog", slug);
+
   return (
     <>
-      {/* <SingleArticle data={SingleBlog.blogArticle} />
-      <ImageGroup data={SingleBlog.imageGroup} />
-      <SplitContent data={SingleBlog.splitContent} />
-      <MoreArticle data={SingleBlog.moreArticle} />
-      <NewsletterSection data={HomeData.NewsletterSection} /> */}
-      
-
+      <SingleArticle data={blog?.data} date={blog?.first_publication_date} />
+      <SliceZone slices={blog?.data?.slices} components={components} />
     </>
   );
 }

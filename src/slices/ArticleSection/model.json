@@ -32,38 +32,30 @@
             "repeat": false
           }
         },
-        "blog_card": {
+        "featured_blog": {
           "type": "Group",
           "config": {
-            "label": "Blog Card",
+            "label": "Featured Blog",
             "repeat": true,
             "fields": {
-              "card_image": {
-                "type": "Image",
-                "config": {
-                  "label": " Card Image",
-                  "constraint": {},
-                  "thumbnails": []
-                }
-              },
-              "card_heading": {
-                "type": "StructuredText",
-                "config": {
-                  "label": "Card Heading",
-                  "placeholder": "Enter card heading...",
-                  "allowTargetBlank": true,
-                  "multi": "heading2,heading3"
-                }
-              },
-              "button": {
+              "featured_blog": {
                 "type": "Link",
                 "config": {
-                  "label": "Button",
-                  "placeholder": "Enter your button name...",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
+                  "label": "Featured Blog",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "blog"
+                  ]
+                }
+              },
+              "with_date": {
+                "type": "Boolean",
+                "config": {
+                  "label": "With Date",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": false
                 }
               }
             }

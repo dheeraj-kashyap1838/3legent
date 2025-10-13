@@ -14,7 +14,7 @@ export type ArticleSectionProps =
  */
 const ArticleSection: FC<ArticleSectionProps> = ({ slice }) => {
   return (
-    <Article_Section data={slice}/>
+    <Article_Section data={slice}  />
   );
 };
 

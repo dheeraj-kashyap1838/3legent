@@ -18,7 +18,7 @@
             "label": "Heading",
             "placeholder": "Enter heading here...",
             "allowTargetBlank": true,
-            "multi": "heading1,heading2,strong"
+            "multi": "heading2,heading3,strong"
           }
         },
         "description": {
