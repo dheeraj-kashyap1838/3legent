@@ -1,0 +1,77 @@
+{
+  "id": "contact_form",
+  "type": "SharedSlice",
+  "name": "ContactForm",
+  "description": "ContactForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "form_input": {
+          "type": "Group",
+          "config": {
+            "label": "Form Input",
+            "repeat": true,
+            "fields": {
+              "input_label": {
+                "type": "Text",
+                "config": {
+                  "label": "Input Label",
+                  "placeholder": "Enter your Input label..."
+                }
+              },
+              "input_placeholder": {
+                "type": "Text",
+                "config": {
+                  "label": "Input Placeholder",
+                  "placeholder": "Enter placeholder here...."
+                }
+              },
+              "form_field": {
+                "type": "Select",
+                "config": {
+                  "label": "Form Field",
+                  "placeholder": "Select your form field...",
+                  "options": [
+                    "input",
+                    "textarea"
+                  ],
+                  "default_value": "input"
+                }
+              },
+              "input_id": {
+                "type": "Text",
+                "config": {
+                  "label": "input id",
+                  "placeholder": "Enter input id..."
+                }
+              }
+            }
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "Enter your button name...",
+            "select": "media",
+            "allowText": true
+          }
+        },
+        "map": {
+          "type": "Text",
+          "config": {
+            "label": "map",
+            "placeholder": "Enter map link here...."
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

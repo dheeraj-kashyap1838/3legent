@@ -1,0 +1,69 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"form_input": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"input_label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "themselves",
+									"type": "Text"
+								}
+							],
+							[
+								"input_placeholder",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "recent",
+									"type": "Text"
+								}
+							],
+							[
+								"form_field",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "input",
+									"type": "Select"
+								}
+							],
+							[
+								"input_id",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "pick",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"button": {
+				"key": "d0f53dbb-120f-4366-8f54-f537a2884c08",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "pipe"
+				}
+			},
+			"map": {
+				"__TYPE__": "FieldContent",
+				"value": "taught",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

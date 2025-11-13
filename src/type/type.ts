@@ -45,9 +45,9 @@ export interface SalesSection {
 }
 
 export interface SmallCard {
-  icon: Image;
-  title: string;
+  card_icon: Image;
   description: string;
+  heading: string;
 }
 
 export interface CardSection {

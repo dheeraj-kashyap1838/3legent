@@ -1,0 +1,68 @@
+{
+  "id": "article_section",
+  "type": "SharedSlice",
+  "name": "ArticleSection",
+  "description": "ArticleSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Enter heading here...",
+            "allowTargetBlank": true,
+            "multi": "heading2,heading3"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "Enter button name...",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "featured_blog": {
+          "type": "Group",
+          "config": {
+            "label": "Featured Blog",
+            "repeat": true,
+            "fields": {
+              "featured_blog": {
+                "type": "Link",
+                "config": {
+                  "label": "Featured Blog",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "blog"
+                  ]
+                }
+              },
+              "with_date": {
+                "type": "Boolean",
+                "config": {
+                  "label": "With Date",
+                  "placeholder_false": "false",
+                  "placeholder_true": "true",
+                  "default_value": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

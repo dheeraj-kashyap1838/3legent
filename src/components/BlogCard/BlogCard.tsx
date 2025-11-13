@@ -1,32 +1,57 @@
-import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
+import { PrismicImage, PrismicRichText } from "@prismicio/react";
+import { ImageField, RichTextField, LinkField } from "@prismicio/client";
+import * as Prismic from "@prismicio/client";
+import ErrowButton from "../ErrowButton/ErrowButton";
+import Link from "next/link";
+import formatDate from "@/utils/formateDate";
+import { createClient } from "@/prismicio";
+import { notFound } from "next/navigation";
 
-import type { BlogCard } from "@/type/type";
-
-interface CardProp {
-  data: BlogCard;
+interface CardData {
+  card_image?: ImageField;
+  card_heading?: RichTextField;
+  button?: LinkField;
 }
 
-function BlogCard({ data }: CardProp) {
+interface CardProp {
+  uid?: string ;
+  date?: string | null;
+}
+async function BlogCard({ uid='', date }: CardProp) {
+  const client = createClient();
+  const BlogData = await client.getByUID("blog", uid).catch(() => notFound());
+  const data: CardData = BlogData.data;
+  
+
+
   return (
     <div className="flex flex-col gap-6 mx-auto">
-      <Image
-        width={357}
-        height={325}
-        src={data.image.path}
-        alt={data.image.alt}
-      />
+      <div className="max-w-[357px] w-full">
+        {Prismic.isFilled.image(data?.card_image) && (
+          <PrismicImage field={data?.card_image} />
+        )}
+      </div>
       <div className="flex flex-col w-full gap-2">
         <Link
-          href={data.title.path}
+          href={`/blog/${uid}`}
           className="font-medium md:text-xl  md:leading-7 leading-[26px]"
         >
-          {data.title.name}
+          {Prismic.isFilled.richText(data?.card_heading) && (
+            <PrismicRichText field={data?.card_heading} />
+          )}
         </Link>
-        <p className="text_primary font-normal text-xs leading-5">
-          {data.date}
-        </p>
+        {date && (
+          <div className="text_primary font-normal text-xs leading-5">
+            {formatDate(date)}
+          </div>
+        )}
+        {date ? null : 
+        <div className="max-w-[103px] w-full">
+          <ErrowButton data={data?.button}/>
+        </div>
+        }
       </div>
     </div>
   );
