@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { createClient } from "@/prismicio";
+import StatsigProviderWrapper from "@/components/StatsigProvider/StatsigProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,7 +15,6 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["500"],
 });
-
 
 export async function getHeaderData() {
   const client = createClient();
@@ -36,9 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} antialiased`}>
-        <Header data={headerData} />
-        <main className="pt-[60px]">{children}</main>
-        <Footer data={footerData} />
+        <StatsigProviderWrapper>
+          <Header data={headerData} />
+          <main className="pt-[60px]">{children}</main>
+          <Footer data={footerData} />
+        </StatsigProviderWrapper>
       </body>
     </html>
   );

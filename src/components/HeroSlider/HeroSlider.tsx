@@ -3,23 +3,28 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Content } from "@prismicio/client";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { PrismicImage, PrismicRichText } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
-
+import { useExperiment } from "statsig-react";
 
 interface HeroSlidesProps {
   slice: Content.HeroSliderSlice;
 }
 
-
 export default function HeroSlider({ slice }: HeroSlidesProps) {
   const { description, heading, sliderImage } = slice?.primary;
+  const experiment = useExperiment("hero-button-test");
+
+  // Get experiment values with fallbacks
+  const buttonColor:string = experiment?.config?.get?.("button_color", "blue");
+  const showButton:boolean = experiment?.config?.get?.("button",true);
+  const variant:string = experiment?.config?.get?.("variant","control");
+  console.log('experiment', buttonColor)
+  console.log('experiment', experiment)
+
   return (
     <section className="md:px-0 px-6" id="hero_slider">
-      <div className=" w-full mx-auto">
+      {/* <div className=" w-full mx-auto">
         {prismic.isFilled.group(sliderImage) && (
           <Swiper
             navigation={true}
@@ -43,7 +48,7 @@ export default function HeroSlider({ slice }: HeroSlidesProps) {
             {prismic.isFilled.richText(heading) && (
               <PrismicRichText field={heading} />
             )}
-          </div>  
+          </div>
           <div className="flex font_inter font-semibold text_primary  max-w-[477px] w-full">
             {prismic.isFilled.richText(heading) && (
               <PrismicRichText field={description} />
@@ -51,6 +56,29 @@ export default function HeroSlider({ slice }: HeroSlidesProps) {
           </div>
         </div>
       </div>
+      <h2 className="text-center font_poppins font-medium text-4xl">
+        New Hero Section Coming Soon!
+      </h2> */}
+      <>
+        <h1>
+          {prismic.isFilled.richText(heading) && (
+            <PrismicRichText field={heading} />
+          )}
+        </h1>
+
+        {showButton && (
+          <button 
+            style={{ background: buttonColor }}
+            data-experiment-variant={variant}
+          >
+            <div className="flex font_inter font-semibold text_primary  max-w-[477px] w-full">
+              {prismic.isFilled.richText(description) && (
+                <PrismicRichText field={description} />
+              )}
+            </div>
+          </button>
+        )}
+      </>
     </section>
   );
 }

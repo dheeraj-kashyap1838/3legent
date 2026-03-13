@@ -16,13 +16,16 @@
     "@prismicio/helpers": "^2.3.9",
     "@prismicio/next": "^2.0.1",
     "@prismicio/react": "^3.2.1",
+    "@statsig/next": "^3.32.0",
     "clsx": "^2.1.1",
     "dateformat": "^5.0.3",
     "next": "15.3.2",
     "next-sitemap": "^4.2.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
+    "statsig-js": "^5.1.0",
+    "statsig-react": "^2.1.0",
     "swiper": "^11.2.7"
   },
   "devDependencies": {
@@ -40,5 +43,4 @@
     "tailwindcss": "^4.1.7",
     "typescript": "^5"
   }
-  
 }
