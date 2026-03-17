@@ -11,7 +11,7 @@ import { notFound } from "next/navigation";
 
 interface CardData {
   card_image?: ImageField;
-  card_heading?: RichTextField;
+  card_heading?: {text?: string} | RichTextField;
   button?: LinkField;
 }
 
@@ -38,9 +38,7 @@ async function BlogCard({ uid='', date }: CardProp) {
           href={`/blog/${uid}`}
           className="font-medium md:text-xl  md:leading-7 leading-[26px]"
         >
-          {Prismic.isFilled.richText(data?.card_heading) && (
-            <PrismicRichText field={data?.card_heading} />
-          )}
+          {data?.card_heading && ('text' in data.card_heading ? data.card_heading.text : Prismic.asText(data.card_heading as RichTextField))}
         </Link>
         {date && (
           <div className="text_primary font-normal text-xs leading-5">
